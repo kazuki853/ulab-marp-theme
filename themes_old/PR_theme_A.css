@@ -1,0 +1,360 @@
+/* @theme PR_theme_A */
+@import 'default';
+
+:root {
+    /* 基本の文字色（ほんのちょっとだけ薄め） */
+    --main-text-color: #333333;
+    /* ハイライトの色（見出しの色） */
+    --main-highlight-color: #3eb370;
+    /* 普通のページの背景色 */
+    --main-bg-color: white;
+
+    /* メインのフォント */
+    font-family: "Segoe UI", "メイリオ", sans-serif;
+    /* 強調部分のフォント */
+    --main-strong-font-family: var(--main-font-family);
+    /* font-family: "Times New Roman", "YuGothic", sans-serif; */
+
+    /* フォント例一覧 */
+    /* 1 */
+    /* font-family: 'Times New Roman', 'YuMincho', serif; */
+    /* 2 */
+    /* font-family: 'Times New Roman', 'A-OTF UD黎ミン Pr6N', serif; */
+    /* 3 */
+    /* font-family: 'Times New Roman', 'IPAMincho', serif; */
+    /* 4 */
+    /* font-family: 'Times New Roman', 'クレー', serif; */
+    /* 5 */
+    /* font-family: 'Times New Roman', 'ヒラギノ明朝 ProN', serif; */
+    /* 6 */
+    /* font-family: 'Times New Roman', '凸版文久明朝', serif; */
+    /* 8 */
+    /* font-family: "Segoe UI", "メイリオ", sans-serif; */
+
+    /* タイトルページの文字色 */
+    --title-text-color: white;
+    /* タイトルページの背景 */
+    --title-bg-color: var(--main-highlight-color);
+    /* タイトルのフォント */
+    --title-font-family: var(--main-font-family);
+}
+
+/* 全体のスタイル */
+section {
+    font-family: var(--main-font-family);
+    color: var(--main-text-color);
+    background-color: var(--main-bg-color);
+    padding: 80px 100px 80px;
+    justify-content: start;
+    position: relative; /* .anotation用 */
+}
+
+section p {
+    text-align:justify;
+}
+
+section p,
+section li,
+section table{
+    font-size: 24px;
+}
+
+section strong {
+    font-weight: bold;
+    font-family: var(--main-strong-font-family);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--main-strong-font-family);
+    color: var(--main-highlight-color);
+    font-weight: 800;
+    /* 明朝体はかっこいいよね... */
+}
+
+img, table {
+    margin-bottom: 16px;
+}
+
+table {
+    overflow: visible;
+}
+
+ul p:first-child,
+ol p:first-child{
+    margin-top: 0;
+}
+
+header,
+footer {
+    left: auto;
+    right: 100px;
+    font-size: 18px;
+}
+
+header {
+    top: 40px;
+}
+
+footer {
+    bottom: 50px;
+}
+
+.katex {
+    margin: 0 0.2em;
+}
+
+.no_right_space .katex {
+    margin-right: 0;
+}
+
+.katex-display>.katex{
+    margin: 0;
+}
+
+.katex .text {
+    font-family: 'Times New Roman', 'YuMincho', 'Yu Mincho', sans-serif;
+}
+
+/* 追加要素 */
+section.title {
+    background: var(--title-bg-color); /*#23539d*/
+    /* グラデーションはきれい */
+    /* background: linear-gradient(45deg, rgba(62,179,112,1) 0%, rgba(43,238,126,1) 100%); */
+    justify-content: center;
+}
+
+section.title h1,
+section.title h2,
+section.title h3,
+section.title h4,
+section.title p {
+    color: var(--title-text-color);
+    font-family: var(--title-font-family);
+    margin: 0;
+}
+
+section.title p {
+    font-size: 28px;
+    font-weight: 800;
+    position: fixed;
+    left: 100px;
+    bottom: 80px;
+}
+
+section.section_title {
+    justify-content: center;
+}
+
+.card{
+    padding: 30px;
+    margin-bottom: 16px;
+}
+
+.card *:last-child{
+    margin-bottom: 0px;
+}
+
+.round_border{
+    border: solid 1px var(--main-text-color);
+    border-radius: 30px;
+}
+
+.no_bottom{
+    border-bottom: none;
+    border-radius: 30px 30px 0 0;
+    padding-bottom: 0;
+}
+
+.no_top{
+    border-top: none;
+    border-radius: 0 0 30px 30px;
+    padding-top:0;
+}
+
+.card_with_title {
+    /* position: relative; */
+    margin-top: 2px;
+}
+
+.card_with_title p:first-child {
+    font-weight: bold;
+}
+
+/* .card_with_title > p:first-child {
+    display:inline-block;
+    padding: 0 6px;
+    background-color: var(--main-bg-color);
+    position: absolute;
+    top: -18px;
+} */
+
+.card_formula_bottom {
+    padding: 30px 30px 22px;
+}
+
+.split {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.split_l {
+    width: 532px;
+    margin-bottom: 0px;
+}
+
+.split_r {
+    width: 532px;
+    margin-bottom: 0px;
+}
+
+.split_l *:last-child,
+.split_l *:last-child {
+    margin-bottom: 0px;
+}
+
+.bg_green {
+    background-color: #d6e9ca;
+}
+
+.bg_gray {
+    background-color: #eeeeee;
+}
+
+.bg_blue {
+    background-color: #d9e4f3;
+}
+
+.bg_transparent {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.h_center {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.h_center>* {
+    text-align: center;
+}
+
+.h_center>table {
+    width: max-content;
+}
+
+.v_center {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.img_center {
+    display: block;
+    margin: 0 auto 16px;
+}
+
+.tips1 {
+    background-color: var(--main-highlight-color);
+    color: var(--main-bg-color);
+    font-size: 1em;
+    font-weight: 700;
+    padding: 0.1em 0.4em;
+    border-radius: 0.4em;
+    margin-right: 0.5em;
+}
+
+.tips2 {
+    color: var(--main-highlight-color);
+    border: 0.1em solid;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 0.1em 0.4em;
+    border-radius: 0.4em;
+    margin-right: 0.5em;
+}
+
+section.mokuji>ul {
+    padding-left: 0;
+}
+
+section.mokuji a {
+    color: var(--main-text-color);
+}
+
+section.mokuji li{
+    
+    position: relative;
+    display: block;
+    /* background-color: coral; */
+}
+
+section.mokuji li span{
+    position: absolute;
+    right: 0;
+    /* background-color: red; */
+    display: inline-block;
+    width: 40px;
+    text-align: right;
+}
+
+section.mokuji>ul>li {
+    margin-bottom: 40px;
+    font-size: 30px;
+    /* border-bottom: 1px solid; */
+}
+
+section.mokuji>ul>li li {
+    font-size: 26px;
+    border-bottom: 1px solid #808080;
+}
+
+.a_tag{
+    font-size: 0.6rem;
+    vertical-align: super;
+}
+
+.annotation {
+    width: 1080px;
+    position: absolute;
+    bottom: 80px;
+}
+
+.annotation p {
+    font-size: 0.7rem;
+}
+
+.annotation .katex {
+    font-size: 0.7rem;
+}
+
+.annotation *:last-child{
+    margin-bottom: 0px;
+}
+
+.annotation *:first-child{
+    margin-top: 6px;
+}
+
+.annotation::before {
+    content: '';
+    width: 600px;
+    position: absolute;
+    border-top: solid 1px var(--main-text-color);
+}
+
+.shadow1 {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.shadow2 {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}

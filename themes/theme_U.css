@@ -1,0 +1,393 @@
+@charset "UTF-8";
+/* @theme theme_U */
+@import url("https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap");
+h1 {
+  font-size: 50px;
+  padding-left: 0.5em;
+  padding-bottom: 0;
+  border-bottom: 0.32em solid #89c3eb;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+h1::after {
+  position: absolute;
+  display: block;
+  content: "";
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 40%;
+  border-bottom: 0.32em solid #dcdcdc;
+}
+
+h2 {
+  font-size: 1.3em;
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+h4 {
+  font-size: 1.05em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 0.9em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 0.8rem;
+}
+h1 strong,
+h2 strong,
+h3 strong,
+h4 strong,
+h5 strong,
+h6 strong {
+  font-weight: inherit;
+  color: #89c3eb;
+}
+h1::part(auto-scaling),
+h2::part(auto-scaling),
+h3::part(auto-scaling),
+h4::part(auto-scaling),
+h5::part(auto-scaling),
+h6::part(auto-scaling) {
+  max-height: 620px;
+}
+
+p {
+  text-align: justify;
+}
+
+p, ul, ol, table, img {
+  margin: 0 0 0.8rem;
+}
+
+table {
+  overflow: visible;
+}
+
+ul, ol {
+  padding-left: 1.6em;
+}
+
+ul > li {
+  position: relative;
+  list-style: none;
+}
+ul > li:before {
+  content: "";
+  background-color: #89c3eb;
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.28em;
+  left: -1.2em;
+}
+ul > li > ul > li:before {
+  width: 0.6em;
+  height: 0.6em;
+  top: 0.38em;
+  left: -1.1em;
+  border-radius: 0;
+}
+
+ol {
+  counter-reset: item;
+}
+
+ol > li {
+  position: relative;
+}
+ol > li::marker {
+  position: absolute;
+  left: -1.2em;
+  font-weight: bold;
+  color: #5dade4;
+}
+
+blockquote {
+  margin: 0;
+  width: 880px;
+  padding-top: 0.2rem;
+  border-top: 0.2rem dashed #89c3eb;
+  font-size: 0.8em;
+  position: absolute;
+  bottom: 60px;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+}
+
+section {
+  align-items: stretch;
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: 20px;
+  font-family: "メイリオ", sans-serif;
+  color: #404040;
+  background-color: white;
+  width: 960px;
+  height: 720px;
+  padding: 40px 40px 60px;
+}
+section > *:last-child, section[data-footer] > :nth-last-child(2) {
+  margin-bottom: 0;
+}
+section > *:first-child,
+section > header:first-child + * {
+  margin-top: 0;
+}
+section[data-color] h1,
+section[data-color] h2,
+section[data-color] h3,
+section[data-color] h4,
+section[data-color] h5,
+section[data-color] h6 {
+  color: currentcolor;
+}
+section.fs20 {
+  font-size: 20px;
+}
+section.fs24 {
+  font-size: 24px;
+}
+section.fs28 {
+  font-size: 28px;
+}
+section.fs32 {
+  font-size: 32px;
+}
+section.fs36 {
+  font-size: 36px;
+}
+section.invert {
+  background-color: #333333;
+  color: #e6e6e6;
+}
+section.cover {
+  position: relative;
+  background-color: #fff;
+  /* background-image: url(./images/ulab_blue.svg), repeating-linear-gradient(150deg, transparent, transparent 19px, #f2f2f2 20px, #f2f2f2 39px, transparent 40px); */
+  background-repeat: no-repeat, no-repeat;
+  background-size: 30%, auto;
+  background-position: 90% 85%, center;
+  justify-content: center;
+}
+section.cover h1 {
+  border-bottom: 0.16em solid #89c3eb;
+  padding-left: 0;
+  text-align: center;
+}
+section.cover h1::after {
+  display: none;
+}
+
+header,
+footer {
+  margin: 0;
+  position: absolute;
+  color: #999999;
+  font-size: 24px;
+  line-height: 1;
+}
+
+header {
+  top: 0px;
+  right: 40px;
+}
+
+footer {
+  bottom: 20px;
+  left: 40px;
+}
+footer > .fcenter {
+  width: 880px;
+  position: fixed;
+  left: 40px;
+  text-align: center;
+  color: #999999;
+  font-size: 24px;
+  line-height: 1;
+}
+
+section::after {
+  line-height: 1;
+  font-size: 40px;
+  height: 40px;
+  padding: 0;
+  position: absolute;
+  top: 59px;
+  right: 60px;
+  color: #999999;
+}
+
+.katex {
+  margin: 0 0.2em;
+}
+
+.no_right_space .katex {
+  margin-right: 0;
+}
+
+.katex-display > .katex {
+  margin: 0;
+}
+
+[data-marp-fitting-svg-content] {
+  width: 99%;
+}
+
+/* 分数の上が欠ける対策 */
+p > svg[data-marp-fitting-math] {
+  overflow: visible;
+}
+
+p > svg > foreignObject {
+  overflow: visible;
+}
+
+.card {
+  padding: 0.5em 1.5em;
+  margin-bottom: 0.8rem;
+}
+.card.bg, .card.title {
+  background-color: #f2f2f2;
+  box-shadow: 5px 5px 0 #d9d9d9;
+}
+.card > *:last-child {
+  margin-bottom: 0;
+}
+.card.border {
+  border: 0.16em solid #89c3eb;
+  border-radius: 0.2em;
+}
+.card.border_dashed {
+  border: 0.2em dashed #89c3eb;
+}
+.card.border_dotted {
+  border: 0.24em dotted #89c3eb;
+}
+.card.no_bottom {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.card.no_top {
+  border-top: none;
+  padding-top: 0;
+}
+.card.title {
+  margin-top: 2em;
+  position: relative;
+  z-index: 0;
+}
+.card.title > p:first-child {
+  display: flex;
+  align-items: center;
+  height: 2em;
+  padding: 0 1em;
+  background-color: #89c3eb;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  top: -2em;
+}
+.card.title > p:first-child:after {
+  content: "";
+  height: calc(2em - 5px);
+  width: 1em;
+  background-color: #5dade4;
+  position: absolute;
+  top: 5px;
+  right: -5px;
+  z-index: -1;
+}
+
+.h_center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.h_center > table {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.v_center {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.split {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 0.8rem;
+}
+
+.split_l {
+  padding-right: 20px;
+  box-sizing: border-box;
+  width: 50%;
+}
+
+.split_r {
+  padding-left: 20px;
+  box-sizing: border-box;
+  width: 50%;
+}
+
+:is(.split_l, .split_r) > * {
+  margin-bottom: 0;
+}
+
+.tips1, .tips4, .tips3 {
+  background-color: #89c3eb;
+  color: white;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 0.1em 0.4em;
+  border-radius: 0.4em;
+  margin-right: 0.5em;
+}
+
+.tips2 {
+  color: #89c3eb;
+  border: 0.1em solid;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 0.1em 0.4em;
+  border-radius: 0.4em;
+  margin-right: 0.5em;
+}
+
+.tips3 {
+  box-shadow: 3px 3px 0 #5dade4;
+}
+
+.tips4 {
+  color: #404040;
+  border-radius: 0;
+  font-weight: normal;
+}/*# sourceMappingURL=theme_U.css.map */

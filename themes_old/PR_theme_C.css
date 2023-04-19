@@ -1,0 +1,571 @@
+/* @theme PR_theme_C */
+@import 'default';
+
+:root {
+    /* 基本の文字色（ちょっとだけ薄め） */
+    --main-text-color: #333333;
+    /* ハイライトの色（見出しの色） */
+    --main-highlight-color: #9b003f;
+    /* 普通のページの背景色 */
+    --main-bg-color: white;
+
+    /* メインのフォント */
+    --main-font-family: mycomma, "Helvetica Neue", "Arial", "メイリオ", sans-serif;
+    /* 強調部分のフォント */
+    --main-strong-font-family: mycomma, "Helvetica Neue", "Arial", "メイリオ", sans-serif;
+    /* font-family: "Times New Roman", "YuGothic", sans-serif; */
+
+    /* フォント例一覧 */
+    /* 1 */
+    /* font-family: 'Times New Roman', 'YuMincho', serif; */
+    /* 2 */
+    /* font-family: 'Times New Roman', 'A-OTF UD黎ミン Pr6N', serif; */
+    /* 3 */
+    /* font-family: 'Times New Roman', 'IPAMincho', serif; */
+    /* 4 */
+    /* font-family: 'Times New Roman', 'クレー', serif; */
+    /* 5 */
+    /* font-family: 'Times New Roman', 'ヒラギノ明朝 ProN', serif; */
+    /* 6 */
+    /* font-family: 'Times New Roman', '凸版文久明朝', serif; */
+    /* 8 */
+    /* font-family: "Helvetica Neue", "Arial", "メイリオ", sans-serif; */
+
+    /* タイトルページの文字色 */
+    --title-text-color: white;
+    /* タイトルページの背景 */
+    --title-bg-color: #707070;
+    /* タイトルのフォント */
+    --title-font-family: var(--main-font-family);
+}
+
+@font-face {
+    font-family: eoit;
+    src: local('Optima-Bold'), url('fonts/Optima-Bold-02.ttf');
+    unicode-range: U+0021-007E;
+}
+
+@font-face {
+    font-family: osyare;
+    src: local('Snell RoundHand Bold');
+    unicode-range: U+0021-007E;
+}
+
+/* メイリオの全角コンマが気に入らないので変えてみる */
+@font-face {
+    font-family: mycomma;
+    src: local('YuMin-Medium'), local('YuMincho-Regular');
+    unicode-range: U+FF0C;
+}
+
+/* 全体のスタイル */
+section {
+    font-family: var(--main-font-family);
+    color: var(--main-text-color);
+    background-color: var(--main-bg-color);
+    padding: 80px 100px 80px;
+    justify-content: start;
+    position: relative; /* .anotation用 */
+}
+
+section p {
+    text-align:justify;
+}
+
+section p,
+section li,
+section table{
+    font-size: 24px;
+}
+
+section strong {
+    font-weight: bold;
+    font-family: var(--main-strong-font-family);
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--main-font-family);
+    color: var(--main-highlight-color);
+    font-weight: 800;
+}
+
+section:not(.section_title):not(.title) h2{
+    padding-left: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+section:not(.section_title):not(.title) h2:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    content: "";
+    background-image: -webkit-repeating-linear-gradient(135deg, var(--main-highlight-color), var(--main-highlight-color) 1px, transparent 2px, transparent 5px);
+    background-image: repeating-linear-gradient(-45deg, var(--main-highlight-color), var(--main-highlight-color) 1px, transparent 2px, transparent 5px);
+    background-size: 7px 7px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* section:not(.section_title):not(.title)>h2:first-of-type{
+    line-height: 0;
+    padding: 0;
+    margin-bottom: 1.2em;
+} */
+
+img, table {
+    margin-bottom: 16px;
+}
+
+table {
+    overflow: visible;
+}
+
+ul p:first-child,
+ol p:first-child{
+    margin-top: 0;
+}
+
+ul>li{
+    position: relative;
+    list-style: none;
+}
+
+/* .noliststyle li,
+.mokuji li{
+    position: static;
+    list-style: disc;
+} */
+
+ul>li::before {
+    content: "";
+    position: absolute;
+    top: 0.18em;
+    left: -30px;
+    -webkit-transform: rotate(50deg);
+    -ms-transform: rotate(50deg);
+    transform: rotate(50deg);
+    width: 0.3em;
+    height: 0.8em;
+    border-right: 5px solid var(--main-highlight-color);
+    border-bottom: 5px solid var(--main-highlight-color);
+}
+
+header,
+footer {
+    left: auto;
+    right: 100px;
+    font-size: 18px;
+}
+
+header {
+    top: 40px;
+}
+
+footer {
+    bottom: 50px;
+}
+
+section::after{
+    font-family: osyare;
+    font-size: 2.4rem;
+    color: white;
+    text-align: center;
+    width: 50px;
+    bottom: 6px;
+    right: 14px;
+}
+
+section::before{
+    content: "";
+    position: fixed;
+    bottom: -80px;
+    right: -80px;
+    /* width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 200px 200px;
+    border-color: transparent transparent #007bff transparent; */
+    width: 160px;
+    height: 160px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    /* background-color: rgb(74, 74, 74);
+    box-shadow: 0px 0px 16px -6px rgba(0,0,0,0.6); */
+    background-color: #808080;
+    box-shadow: inset 0px 0px 16px 0px rgba(0,0,0,0.6);
+}
+
+.katex {
+    margin: 0 0.2em;
+}
+
+.no_right_space .katex {
+    margin-right: 0;
+}
+
+.katex-display>.katex{
+    margin: 0;
+}
+
+.katex .text {
+    font-family: 'Times New Roman', 'YuMincho', 'Yu Mincho', sans-serif;
+}
+
+/* 式番号表示用（バグあるかも？） */
+[data-marp-fitting-svg-content] {
+    width: 99%;
+}
+
+/* 分数の上が欠ける対策 */
+p>svg[data-marp-fitting-math] {
+    overflow: visible;
+}
+p>svg>foreignObject {
+    overflow: visible;
+}
+
+/* 追加要素 */
+section.title {
+    background: var(--title-bg-color);
+    /* グラデーションはきれい */
+    /* background: linear-gradient(45deg, rgba(62,179,112,1) 0%, rgba(43,238,126,1) 100%); */
+    /* background: linear-gradient(90deg, rgba(40,40,40,1) 0%, rgba(75,75,75,1) 100%); */
+    /* background-color: #ffffff;
+    background-image:  linear-gradient(30deg, #f2f8ff 12%, transparent 12.5%, transparent 87%, #f2f8ff 87.5%, #f2f8ff), linear-gradient(150deg, #f2f8ff 12%, transparent 12.5%, transparent 87%, #f2f8ff 87.5%, #f2f8ff), linear-gradient(30deg, #f2f8ff 12%, transparent 12.5%, transparent 87%, #f2f8ff 87.5%, #f2f8ff), linear-gradient(150deg, #f2f8ff 12%, transparent 12.5%, transparent 87%, #f2f8ff 87.5%, #f2f8ff), linear-gradient(60deg, #f2f8ff77 25%, transparent 25.5%, transparent 75%, #f2f8ff77 75%, #f2f8ff77), linear-gradient(60deg, #f2f8ff77 25%, transparent 25.5%, transparent 75%, #f2f8ff77 75%, #f2f8ff77);
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px; */
+    background-color: #434343;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 304 304' width='304' height='304'%3E%3Cpath fill='%236f6f6f' fill-opacity='0.4' d='M44.1 224a5 5 0 1 1 0 2H0v-2h44.1zm160 48a5 5 0 1 1 0 2H82v-2h122.1zm57.8-46a5 5 0 1 1 0-2H304v2h-42.1zm0 16a5 5 0 1 1 0-2H304v2h-42.1zm6.2-114a5 5 0 1 1 0 2h-86.2a5 5 0 1 1 0-2h86.2zm-256-48a5 5 0 1 1 0 2H0v-2h12.1zm185.8 34a5 5 0 1 1 0-2h86.2a5 5 0 1 1 0 2h-86.2zM258 12.1a5 5 0 1 1-2 0V0h2v12.1zm-64 208a5 5 0 1 1-2 0v-54.2a5 5 0 1 1 2 0v54.2zm48-198.2V80h62v2h-64V21.9a5 5 0 1 1 2 0zm16 16V64h46v2h-48V37.9a5 5 0 1 1 2 0zm-128 96V208h16v12.1a5 5 0 1 1-2 0V210h-16v-76.1a5 5 0 1 1 2 0zm-5.9-21.9a5 5 0 1 1 0 2H114v48H85.9a5 5 0 1 1 0-2H112v-48h12.1zm-6.2 130a5 5 0 1 1 0-2H176v-74.1a5 5 0 1 1 2 0V242h-60.1zm-16-64a5 5 0 1 1 0-2H114v48h10.1a5 5 0 1 1 0 2H112v-48h-10.1zM66 284.1a5 5 0 1 1-2 0V274H50v30h-2v-32h18v12.1zM236.1 176a5 5 0 1 1 0 2H226v94h48v32h-2v-30h-48v-98h12.1zm25.8-30a5 5 0 1 1 0-2H274v44.1a5 5 0 1 1-2 0V146h-10.1zm-64 96a5 5 0 1 1 0-2H208v-80h16v-14h-42.1a5 5 0 1 1 0-2H226v18h-16v80h-12.1zm86.2-210a5 5 0 1 1 0 2H272V0h2v32h10.1zM98 101.9V146H53.9a5 5 0 1 1 0-2H96v-42.1a5 5 0 1 1 2 0zM53.9 34a5 5 0 1 1 0-2H80V0h2v34H53.9zm60.1 3.9V66H82v64H69.9a5 5 0 1 1 0-2H80V64h32V37.9a5 5 0 1 1 2 0zM101.9 82a5 5 0 1 1 0-2H128V37.9a5 5 0 1 1 2 0V82h-28.1zm16-64a5 5 0 1 1 0-2H146v44.1a5 5 0 1 1-2 0V18h-26.1zm102.2 270a5 5 0 1 1 0 2H98v14h-2v-16h124.1zM242 149.9V160h16v34h-16v62h48v48h-2v-46h-48v-66h16v-30h-16v-12.1a5 5 0 1 1 2 0zM53.9 18a5 5 0 1 1 0-2H64V2H48V0h18v18H53.9zm112 32a5 5 0 1 1 0-2H192V0h50v2h-48v48h-28.1zm-48-48a5 5 0 0 1-9.8-2h2.07a3 3 0 1 0 5.66 0H178v34h-18V21.9a5 5 0 1 1 2 0V32h14V2h-58.1zm0 96a5 5 0 1 1 0-2H137l32-32h39V21.9a5 5 0 1 1 2 0V66h-40.17l-32 32H117.9zm28.1 90.1a5 5 0 1 1-2 0v-76.51L175.59 80H224V21.9a5 5 0 1 1 2 0V82h-49.59L146 112.41v75.69zm16 32a5 5 0 1 1-2 0v-99.51L184.59 96H300.1a5 5 0 0 1 3.9-3.9v2.07a3 3 0 0 0 0 5.66v2.07a5 5 0 0 1-3.9-3.9H185.41L162 121.41v98.69zm-144-64a5 5 0 1 1-2 0v-3.51l48-48V48h32V0h2v50H66v55.41l-48 48v2.69zM50 53.9v43.51l-48 48V208h26.1a5 5 0 1 1 0 2H0v-65.41l48-48V53.9a5 5 0 1 1 2 0zm-16 16V89.41l-34 34v-2.82l32-32V69.9a5 5 0 1 1 2 0zM12.1 32a5 5 0 1 1 0 2H9.41L0 43.41V40.6L8.59 32h3.51zm265.8 18a5 5 0 1 1 0-2h18.69l7.41-7.41v2.82L297.41 50H277.9zm-16 160a5 5 0 1 1 0-2H288v-71.41l16-16v2.82l-14 14V210h-28.1zm-208 32a5 5 0 1 1 0-2H64v-22.59L40.59 194H21.9a5 5 0 1 1 0-2H41.41L66 216.59V242H53.9zm150.2 14a5 5 0 1 1 0 2H96v-56.6L56.6 162H37.9a5 5 0 1 1 0-2h19.5L98 200.6V256h106.1zm-150.2 2a5 5 0 1 1 0-2H80v-46.59L48.59 178H21.9a5 5 0 1 1 0-2H49.41L82 208.59V258H53.9zM34 39.8v1.61L9.41 66H0v-2h8.59L32 40.59V0h2v39.8zM2 300.1a5 5 0 0 1 3.9 3.9H3.83A3 3 0 0 0 0 302.17V256h18v48h-2v-46H2v42.1zM34 241v63h-2v-62H0v-2h34v1zM17 18H0v-2h16V0h2v18h-1zm273-2h14v2h-16V0h2v16zm-32 273v15h-2v-14h-14v14h-2v-16h18v1zM0 92.1A5.02 5.02 0 0 1 6 97a5 5 0 0 1-6 4.9v-2.07a3 3 0 1 0 0-5.66V92.1zM80 272h2v32h-2v-32zm37.9 32h-2.07a3 3 0 0 0-5.66 0h-2.07a5 5 0 0 1 9.8 0zM5.9 0A5.02 5.02 0 0 1 0 5.9V3.83A3 3 0 0 0 3.83 0H5.9zm294.2 0h2.07A3 3 0 0 0 304 3.83V5.9a5 5 0 0 1-3.9-5.9zm3.9 300.1v2.07a3 3 0 0 0-1.83 1.83h-2.07a5 5 0 0 1 3.9-3.9zM97 100a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-48 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 96a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-144a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM49 36a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM33 68a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 240a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm80-176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm112 176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 180a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 84a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'%3E%3C/path%3E%3C/svg%3E");
+    justify-content: center;
+}
+
+section.title::before{
+    content: "";
+    background: var(--main-highlight-color);
+    width: 1000px;
+    height: 1000px;
+    transform: rotate(15deg);
+    position: absolute;
+    top: -200px;
+    left: -180px;
+    box-shadow: 5px 5px 50px rgba(0, 0, 0, .5);;
+    border: 10px solid #780030;
+    z-index: 1;
+}
+
+section.title h1,
+section.title h2,
+section.title h3,
+section.title h4,
+section.title p {
+    color: var(--title-text-color);
+    font-family: var(--title-font-family);
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+section.title h1,
+section.title h2,
+section.title p{
+    font-family: osyare, var(--main-strong-font-family);
+    font-weight: 600;
+    /* letter-spacing: 0.06em; */
+}
+
+section.title h1{
+    /* letter-spacing: 0.06em; */
+    font-size: 1.7rem;
+    border-bottom: 1px solid white;
+    opacity: 1;
+    margin-bottom: 20px;;
+    width: 61%;
+}
+
+section.title h2{
+    font-size: 1.2rem;
+}
+
+section.title p{
+    font-size: 0.8rem;
+    font-weight: 600;
+    position: fixed;
+    left: 100px;
+    bottom: 80px;
+}
+
+section.section_title{
+    justify-content: center;
+    /* background-color: #ffffff;
+    background-image:  linear-gradient(#f2f8ff 3.2px, transparent 3.2px), linear-gradient(90deg, #f2f8ff 3.2px, transparent 3.2px), linear-gradient(#f2f8ff 1.6px, transparent 1.6px), linear-gradient(90deg, #f2f8ff 1.6px, #ffffff 1.6px);
+    background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px;
+    background-position: -3.2px -3.2px, -3.2px -3.2px, -1.6px -1.6px, -1.6px -1.6px; */
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 304 304' width='304' height='304'%3E%3Cpath fill='%239b003f' fill-opacity='0.06' d='M44.1 224a5 5 0 1 1 0 2H0v-2h44.1zm160 48a5 5 0 1 1 0 2H82v-2h122.1zm57.8-46a5 5 0 1 1 0-2H304v2h-42.1zm0 16a5 5 0 1 1 0-2H304v2h-42.1zm6.2-114a5 5 0 1 1 0 2h-86.2a5 5 0 1 1 0-2h86.2zm-256-48a5 5 0 1 1 0 2H0v-2h12.1zm185.8 34a5 5 0 1 1 0-2h86.2a5 5 0 1 1 0 2h-86.2zM258 12.1a5 5 0 1 1-2 0V0h2v12.1zm-64 208a5 5 0 1 1-2 0v-54.2a5 5 0 1 1 2 0v54.2zm48-198.2V80h62v2h-64V21.9a5 5 0 1 1 2 0zm16 16V64h46v2h-48V37.9a5 5 0 1 1 2 0zm-128 96V208h16v12.1a5 5 0 1 1-2 0V210h-16v-76.1a5 5 0 1 1 2 0zm-5.9-21.9a5 5 0 1 1 0 2H114v48H85.9a5 5 0 1 1 0-2H112v-48h12.1zm-6.2 130a5 5 0 1 1 0-2H176v-74.1a5 5 0 1 1 2 0V242h-60.1zm-16-64a5 5 0 1 1 0-2H114v48h10.1a5 5 0 1 1 0 2H112v-48h-10.1zM66 284.1a5 5 0 1 1-2 0V274H50v30h-2v-32h18v12.1zM236.1 176a5 5 0 1 1 0 2H226v94h48v32h-2v-30h-48v-98h12.1zm25.8-30a5 5 0 1 1 0-2H274v44.1a5 5 0 1 1-2 0V146h-10.1zm-64 96a5 5 0 1 1 0-2H208v-80h16v-14h-42.1a5 5 0 1 1 0-2H226v18h-16v80h-12.1zm86.2-210a5 5 0 1 1 0 2H272V0h2v32h10.1zM98 101.9V146H53.9a5 5 0 1 1 0-2H96v-42.1a5 5 0 1 1 2 0zM53.9 34a5 5 0 1 1 0-2H80V0h2v34H53.9zm60.1 3.9V66H82v64H69.9a5 5 0 1 1 0-2H80V64h32V37.9a5 5 0 1 1 2 0zM101.9 82a5 5 0 1 1 0-2H128V37.9a5 5 0 1 1 2 0V82h-28.1zm16-64a5 5 0 1 1 0-2H146v44.1a5 5 0 1 1-2 0V18h-26.1zm102.2 270a5 5 0 1 1 0 2H98v14h-2v-16h124.1zM242 149.9V160h16v34h-16v62h48v48h-2v-46h-48v-66h16v-30h-16v-12.1a5 5 0 1 1 2 0zM53.9 18a5 5 0 1 1 0-2H64V2H48V0h18v18H53.9zm112 32a5 5 0 1 1 0-2H192V0h50v2h-48v48h-28.1zm-48-48a5 5 0 0 1-9.8-2h2.07a3 3 0 1 0 5.66 0H178v34h-18V21.9a5 5 0 1 1 2 0V32h14V2h-58.1zm0 96a5 5 0 1 1 0-2H137l32-32h39V21.9a5 5 0 1 1 2 0V66h-40.17l-32 32H117.9zm28.1 90.1a5 5 0 1 1-2 0v-76.51L175.59 80H224V21.9a5 5 0 1 1 2 0V82h-49.59L146 112.41v75.69zm16 32a5 5 0 1 1-2 0v-99.51L184.59 96H300.1a5 5 0 0 1 3.9-3.9v2.07a3 3 0 0 0 0 5.66v2.07a5 5 0 0 1-3.9-3.9H185.41L162 121.41v98.69zm-144-64a5 5 0 1 1-2 0v-3.51l48-48V48h32V0h2v50H66v55.41l-48 48v2.69zM50 53.9v43.51l-48 48V208h26.1a5 5 0 1 1 0 2H0v-65.41l48-48V53.9a5 5 0 1 1 2 0zm-16 16V89.41l-34 34v-2.82l32-32V69.9a5 5 0 1 1 2 0zM12.1 32a5 5 0 1 1 0 2H9.41L0 43.41V40.6L8.59 32h3.51zm265.8 18a5 5 0 1 1 0-2h18.69l7.41-7.41v2.82L297.41 50H277.9zm-16 160a5 5 0 1 1 0-2H288v-71.41l16-16v2.82l-14 14V210h-28.1zm-208 32a5 5 0 1 1 0-2H64v-22.59L40.59 194H21.9a5 5 0 1 1 0-2H41.41L66 216.59V242H53.9zm150.2 14a5 5 0 1 1 0 2H96v-56.6L56.6 162H37.9a5 5 0 1 1 0-2h19.5L98 200.6V256h106.1zm-150.2 2a5 5 0 1 1 0-2H80v-46.59L48.59 178H21.9a5 5 0 1 1 0-2H49.41L82 208.59V258H53.9zM34 39.8v1.61L9.41 66H0v-2h8.59L32 40.59V0h2v39.8zM2 300.1a5 5 0 0 1 3.9 3.9H3.83A3 3 0 0 0 0 302.17V256h18v48h-2v-46H2v42.1zM34 241v63h-2v-62H0v-2h34v1zM17 18H0v-2h16V0h2v18h-1zm273-2h14v2h-16V0h2v16zm-32 273v15h-2v-14h-14v14h-2v-16h18v1zM0 92.1A5.02 5.02 0 0 1 6 97a5 5 0 0 1-6 4.9v-2.07a3 3 0 1 0 0-5.66V92.1zM80 272h2v32h-2v-32zm37.9 32h-2.07a3 3 0 0 0-5.66 0h-2.07a5 5 0 0 1 9.8 0zM5.9 0A5.02 5.02 0 0 1 0 5.9V3.83A3 3 0 0 0 3.83 0H5.9zm294.2 0h2.07A3 3 0 0 0 304 3.83V5.9a5 5 0 0 1-3.9-5.9zm3.9 300.1v2.07a3 3 0 0 0-1.83 1.83h-2.07a5 5 0 0 1 3.9-3.9zM97 100a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-48 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 96a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-144a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM49 36a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM33 68a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 240a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm80-176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm112 176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 180a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 84a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+section.section_title *{
+    opacity: 1.0;
+}
+
+section.section_title h2{
+    font-family: eoit, var(--main-strong-font-family);
+}
+
+.card{
+    padding: 10px 30px;
+    margin-bottom: 16px;
+    border-radius: 30px 0 30px 0;
+}
+
+.card *:last-child{
+    margin-bottom: 0px;
+}
+
+.color_card, .round_border{
+    padding: 10px 30px;
+    background-color: #f4f4f4;
+    border-left: 8px solid var(--main-highlight-color);
+}
+
+.no_bottom{
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.no_top{
+    border-top: none;
+    padding-top:0;
+}
+
+.card_with_title {
+    margin-top: 2px;
+}
+
+.card_with_title p:first-child {
+    font-weight: bold;
+    /* color: var(--main-highlight-color); */
+}
+
+.card_formula_bottom {
+    padding: 30px 30px 22px;
+}
+
+.split {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.split_l {
+    width: 532px;
+    margin-bottom: 0px;
+}
+
+.split_r {
+    width: 532px;
+    margin-bottom: 0px;
+}
+
+.split_l *:last-child,
+.split_l *:last-child {
+    margin-bottom: 0px;
+}
+
+.bg_green {
+    background-color: #d6e9ca;
+}
+
+.bg_gray {
+    background-color: #eeeeee;
+}
+
+.bg_blue {
+    background-color: #d9e4f3;
+}
+
+.bg_transparent {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.h_center {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.h_center>* {
+    text-align: center;
+}
+
+.h_center>table {
+    width: max-content;
+}
+
+.v_center {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.img_center {
+    display: block;
+    margin: 0 auto 16px;
+}
+
+.tips1 {
+    background-color: var(--main-highlight-color);
+    color: var(--main-bg-color);
+    font-size: 1em;
+    font-weight: 700;
+    padding: 0.1em 0.4em;
+    border-radius: 0.4em;
+    margin-right: 0.5em;
+}
+
+.tips2 {
+    color: var(--main-highlight-color);
+    border: 0.1em solid;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 0.1em 0.4em;
+    border-radius: 0.4em;
+    margin-right: 0.5em;
+}
+
+section.mokuji>ul {
+    padding-left: 0;
+}
+
+section.mokuji a {
+    color: var(--main-text-color);
+}
+
+section.mokuji li{
+    font-family: eoit, var(--main-strong-font-family);
+    position: relative;
+    display: block;
+    list-style: none;
+}
+
+section.mokuji li::before{
+    display: none;
+}
+
+section.mokuji li .no{
+    position: absolute;
+    right: 10px;
+    display: inline-block;
+    width: 40px;
+    text-align: right;
+    font-family: var(--main-font-family);
+}
+
+section.mokuji>ul>li {
+    margin-bottom: 40px;
+    font-size: 30px;
+}
+
+section.mokuji>ul>li li {
+    font-size: 26px;
+    border-right: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+    border-radius: 0 0 15px 0;
+}
+
+.a_tag{
+    font-size: 0.6rem;
+    vertical-align: super;
+}
+
+.annotation {
+    width: 1080px;
+    position: absolute;
+    bottom: 80px;
+}
+
+.annotation p {
+    font-size: 0.7rem;
+}
+
+.annotation .katex {
+    font-size: 0.7rem;
+}
+
+.annotation *:last-child{
+    margin-bottom: 0px;
+}
+
+.annotation *:first-child{
+    margin-top: 6px;
+}
+
+.annotation::before {
+    content: '';
+    width: 600px;
+    position: absolute;
+    border-top: solid 1px var(--main-text-color);
+}
+
+.list_bib>ol,
+.list_paren_alph>ol,
+.list_paren_roman>ol,
+.list_half_paren_roman>ol{
+    counter-reset: list;
+}
+
+.list_bib>ol>li,
+.list_paren_alph>ol>li,
+.list_paren_roman>ol>li,
+.list_half_paren_roman>ol>li{
+    list-style: none;
+    counter-increment: list;
+}
+
+.list_paren_alph>ol>li::marker{
+    content: "(" counter(list, lower-alpha) ")\a0";
+    font-weight: bold;
+    font-family: "Times New Roman", sans-serif;;
+}
+
+.list_paren_roman>ol>li::marker{
+    content: "(" counter(list, lower-roman) ")\a0";
+}
+
+.list_half_paren_roman>ol>li::marker{
+    content: counter(list, lower-roman) ")\a0";
+}
+
+.list_bib>ol>li::marker{
+    content: "[" counter(list, decimal) "]\a0";
+}
+
+
+
+.shadow1 {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.shadow2 {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
