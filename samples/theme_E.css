@@ -94,17 +94,31 @@ blockquote > p {
 }
 
 pre {
-  background-color: #001a0b;
-  color: #fff;
   padding: 1em;
   border-radius: 0.5em;
 }
 
 p code {
-  background-color: #001a0b;
-  color: #fff;
   padding: 0.2em 0.4em;
   border-radius: 0.4em;
+}
+
+pre,
+p code {
+  background-color: #001a0b;
+  color: #fff;
+}
+
+.code_white pre,
+.code_white p code {
+  background-color: #f2f2f2;
+  color: #404040;
+}
+
+.code_black pre,
+.code_black p code {
+  background-color: #001a0b;
+  color: #fff;
 }
 
 a,
@@ -125,13 +139,6 @@ section {
   width: 960px;
   height: 720px;
   padding: 60px 40px 60px;
-}
-section > *:last-child, section[data-footer] > :nth-last-child(2) {
-  margin-bottom: 0;
-}
-section > *:first-child,
-section > header:first-child + * {
-  margin-top: 0;
 }
 section[data-color] h1,
 section[data-color] h2,

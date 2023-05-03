@@ -1,4 +1,7 @@
 /* @theme theme_E */
+
+@use "sass:math";
+
 $section-width: 960px;
 $section-height: 720px;
 $section-padding-lr: 40px;
@@ -97,13 +100,28 @@ ul>li{
 }
 
 blockquote {
-    margin: 0;
-    width: $section-width - $section-padding-lr * 2;
-    padding-top: 0.2rem;
-    border-top: 0.3rem dotted $main-highlight-color;
-    font-size: 0.8em;
-    position: absolute;
-    bottom: $section-padding-bottom;
+    border-left: 5px solid lighten(#000, 80%);
+    margin-left: 0;
+    padding-left: 1em;
+    &>p {
+        margin-bottom: 0.2em;
+    }
+}
+
+pre {
+    // background-color: lighten(#000, 95%);
+    background-color: darken($main-highlight-color, 25%);
+    color: #fff;
+    padding: 1em;
+    border-radius: 0.5em;
+}
+
+p code {
+    // background-color: lighten(#000, 95%);
+    background-color: darken($main-highlight-color, 25%);
+    color: #fff;
+    padding: 0.2em 0.4em;
+    border-radius: 0.4em;
 }
 
 a,
@@ -112,7 +130,6 @@ a:hover,
 a:active {
   color: inherit;
 }
-
 
 section {
     
@@ -287,7 +304,6 @@ section {
     }
 }
 
-// header and footer
 @mixin header-footer-style {
     color: $header-footer-color;
     font-size: $header-footer-font-size;
@@ -419,8 +435,6 @@ p>svg>foreignObject {
     }
 }
 
-// center
-
 .h_center {
     display: flex;
     flex-direction: column;
@@ -442,7 +456,6 @@ p>svg>foreignObject {
     justify-content: center;
 }
 
-// split
 .split {
     display: flex;
     flex-wrap: nowrap;
@@ -450,13 +463,13 @@ p>svg>foreignObject {
 }
 
 .split_l {
-    padding-right: $section-padding-lr / 2;
+    padding-right: math.div($section-padding-lr,2);
     box-sizing: border-box;
     width: 50%;
 }
 
 .split_r {
-    padding-left: $section-padding-lr / 2;
+    padding-left: math.div($section-padding-lr,2);
     box-sizing: border-box;
     width: 50%;
 }
@@ -465,7 +478,16 @@ p>svg>foreignObject {
     margin-bottom: 0;
 }
 
-// tips
+.memo {
+    margin: 0;
+    width: $section-width - $section-padding-lr * 2;
+    padding-top: 0.2rem;
+    border-top: 0.3rem dotted $main-highlight-color;
+    font-size: 0.8em;
+    position: absolute;
+    bottom: $section-padding-bottom;
+}
+
 .tips1 {
     background-color: $main-highlight-color;
     color: $main-bg-color;
