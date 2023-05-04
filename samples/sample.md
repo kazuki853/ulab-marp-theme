@@ -173,6 +173,24 @@ $$
     
 </div>
 
+<div class="card border">
+
+枠線付きのカード。
+    
+</div>
+
+<div class="card border_dotted">
+
+点線
+    
+</div>
+
+<div class="card border_dashed">
+
+破線
+    
+</div>
+
 ---
 
 # 画像の入れ方（と中央揃え）
@@ -257,6 +275,21 @@ Wikipediaによると、子供注意の標識だそうです。
 
 </div>
 </div>
+
+---
+
+# その他の機能
+`tips1`または`tips2`を使うと文字を強調することができます。
+
+<span class="tips1">参考</span>
+
+<span class="tips2">補足</span>
+
+テーマによっては`tips4`以降が存在します。
+
+<span class="tips3">注意</span>
+
+<span class="tips4">問題</span>
 
 ---
 

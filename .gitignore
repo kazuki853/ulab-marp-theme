@@ -1,8 +1,9 @@
+.vscode
+*.DS_Store
 *.pdf
 *.pptx
 *.css.map
 *.html
-*.DS_Store
 themes/*.md
 samples/*.scss
 samples/*.css

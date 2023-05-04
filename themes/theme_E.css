@@ -1,15 +1,6 @@
 @charset "UTF-8";
 /* @theme theme_E */
 @import url("https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap");
-h1 {
-  font-size: 1.6em;
-  padding: 0.4em 1em;
-  color: white;
-  background-color: #094;
-  border-radius: 0.8rem;
-  box-shadow: 5px 5px 0 #00662d;
-}
-
 h2 {
   font-size: 1.3em;
 }
@@ -38,15 +29,6 @@ h5,
 h6 {
   margin: 0 0 0.8rem;
 }
-h1 strong,
-h2 strong,
-h3 strong,
-h4 strong,
-h5 strong,
-h6 strong {
-  font-weight: inherit;
-  color: #094;
-}
 h1::part(auto-scaling),
 h2::part(auto-scaling),
 h3::part(auto-scaling),
@@ -68,22 +50,6 @@ table {
   overflow: visible;
 }
 
-ul > li {
-  position: relative;
-  list-style: none;
-}
-ul > li:before {
-  content: "";
-  position: absolute;
-  top: 0.18em;
-  left: -30px;
-  transform: rotate(50deg);
-  width: 0.3em;
-  height: 0.8em;
-  border-right: 5px solid #094;
-  border-bottom: 5px solid #094;
-}
-
 blockquote {
   border-left: 5px solid #cccccc;
   margin-left: 0;
@@ -94,17 +60,31 @@ blockquote > p {
 }
 
 pre {
-  background-color: #001a0b;
-  color: #fff;
   padding: 1em;
   border-radius: 0.5em;
 }
 
 p code {
-  background-color: #001a0b;
-  color: #fff;
   padding: 0.2em 0.4em;
   border-radius: 0.4em;
+}
+
+pre,
+p code {
+  background-color: #404040;
+  color: #fff;
+}
+
+.code_white pre,
+.code_white p code {
+  background-color: #f2f2f2;
+  color: #404040;
+}
+
+.code_black pre,
+.code_black p code {
+  background-color: #404040;
+  color: #fff;
 }
 
 a,
@@ -119,19 +99,9 @@ section {
   display: flex;
   flex-flow: column nowrap;
   font-size: 20px;
-  font-family: "M PLUS Rounded 1c", sans-serif;
-  color: #404040;
-  background-color: white;
   width: 960px;
   height: 720px;
   padding: 60px 40px 60px;
-}
-section > *:last-child, section[data-footer] > :nth-last-child(2) {
-  margin-bottom: 0;
-}
-section > *:first-child,
-section > header:first-child + * {
-  margin-top: 0;
 }
 section[data-color] h1,
 section[data-color] h2,
@@ -153,6 +123,199 @@ section.fs32 {
 section.invert {
   background-color: #333333;
   color: #e6e6e6;
+}
+section.mokuji h2 {
+  font-size: 1.6em;
+}
+section.mokuji li {
+  position: relative;
+  display: block;
+  list-style: none;
+  font-size: 1.3em;
+  border-bottom: 1px solid #808080;
+  margin-bottom: 0.4em;
+}
+section.mokuji li a {
+  text-decoration: none;
+}
+section.mokuji li:before {
+  display: none;
+}
+section.mokuji li .no {
+  position: absolute;
+  right: 0.5em;
+  display: inline-block;
+  width: 3em;
+  text-align: right;
+}
+
+header,
+footer {
+  margin: 0;
+  position: absolute;
+  font-size: 16px;
+  line-height: 1;
+}
+
+header {
+  top: 28px;
+  right: 40px;
+}
+
+footer {
+  bottom: 28px;
+  left: 40px;
+}
+
+footer > .fcenter {
+  width: 880px;
+  position: fixed;
+  left: 40px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1;
+}
+
+section::after {
+  padding: 0;
+  bottom: 28px;
+  right: 40px;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.katex {
+  margin: 0 0.2em;
+}
+
+.no_right_space .katex {
+  margin-right: 0;
+}
+
+.katex-display > .katex {
+  margin: 0;
+}
+
+.katex-display > .katex > .katex-html {
+  position: initial;
+}
+
+[data-marp-fitting-svg-content] {
+  width: 99%;
+}
+
+mjx-container {
+  font-size: 0.75em;
+}
+
+mjx-container:not([display=true]) {
+  margin: 0 0.2em;
+}
+
+/* 分数の上が欠ける対策 */
+p > svg[data-marp-fitting-math] {
+  overflow: visible;
+}
+
+p > svg > foreignObject {
+  overflow: visible;
+}
+
+.card {
+  padding: 0.5em 1.5em;
+  margin-bottom: 0.8rem;
+}
+.card > *:last-child {
+  margin-bottom: 0;
+}
+
+.h_center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.h_center > table {
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.v_center {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.split {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 0.8rem;
+}
+
+.split_l {
+  padding-right: 20px;
+  box-sizing: border-box;
+  width: 50%;
+}
+
+.split_r {
+  padding-left: 20px;
+  box-sizing: border-box;
+  width: 50%;
+}
+
+:is(.split_l, .split_r) > * {
+  margin-bottom: 0;
+}
+
+.memo {
+  margin: 0;
+  width: 880px;
+  padding-top: 0.2rem;
+  font-size: 0.8em;
+  position: absolute;
+  bottom: 60px;
+}
+
+h1 {
+  font-size: 1.6em;
+  padding: 0.4em 1em;
+  color: white;
+  background-color: #094;
+  border-radius: 0.8rem;
+  box-shadow: 5px 5px 0 #00662d;
+}
+
+h1 strong,
+h2 strong,
+h3 strong,
+h4 strong,
+h5 strong,
+h6 strong {
+  font-weight: inherit;
+  color: #094;
+}
+
+ul > li {
+  position: relative;
+  list-style: none;
+}
+ul > li:before {
+  content: "";
+  position: absolute;
+  top: 0.18em;
+  left: -30px;
+  transform: rotate(50deg);
+  width: 0.3em;
+  height: 0.8em;
+  border-right: 5px solid #094;
+  border-bottom: 5px solid #094;
+}
+
+section {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  color: #404040;
+  background-color: white;
 }
 section.section_title {
   justify-content: center;
@@ -231,123 +394,32 @@ section.cover p:first-of-type {
   font-size: 1.5em;
   text-align: right;
 }
-section.mokuji h2 {
-  font-size: 1.6em;
-}
-section.mokuji li {
-  position: relative;
-  display: block;
-  list-style: none;
-  font-size: 1.3em;
-  border-bottom: 1px solid #808080;
-  margin-bottom: 0.4em;
-}
-section.mokuji li a {
-  text-decoration: none;
-}
-section.mokuji li:before {
-  display: none;
-}
-section.mokuji li .no {
-  position: absolute;
-  right: 0.5em;
-  display: inline-block;
-  width: 3em;
-  text-align: right;
-}
 
 header,
-footer {
-  margin: 0;
-  position: absolute;
-  color: #999999;
-  font-size: 16px;
-  line-height: 1;
-}
-
-header {
-  top: 28px;
-  right: 40px;
-}
-
-footer {
-  bottom: 28px;
-  left: 40px;
-}
-
-footer > .fcenter {
-  width: 880px;
-  position: fixed;
-  left: 40px;
-  text-align: center;
-  color: #999999;
-  font-size: 16px;
-  line-height: 1;
-}
-
+footer,
+footer > .fcenter,
 section::after {
-  padding: 0;
-  bottom: 28px;
-  right: 40px;
   color: #999999;
-  font-size: 16px;
-  line-height: 1;
-}
-
-.katex {
-  margin: 0 0.2em;
-}
-
-.no_right_space .katex {
-  margin-right: 0;
-}
-
-.katex-display > .katex {
-  margin: 0;
-}
-
-.katex-display > .katex > .katex-html {
-  position: initial;
-}
-
-[data-marp-fitting-svg-content] {
-  width: 99%;
-}
-
-mjx-container {
-  font-size: 0.75em;
-}
-
-mjx-container:not([display=true]) {
-  margin: 0 0.2em;
-}
-
-/* 分数の上が欠ける対策 */
-p > svg[data-marp-fitting-math] {
-  overflow: visible;
-}
-
-p > svg > foreignObject {
-  overflow: visible;
 }
 
 .card {
-  padding: 0.5em 1.5em;
-  margin-bottom: 0.8rem;
   background-color: #f2f2f2;
   border-radius: 0.8rem;
   box-shadow: 5px 5px 0 #d9d9d9;
 }
-.card > *:last-child {
-  margin-bottom: 0;
+.card.border, .card.border_dashed, .card.border_dotted {
+  background-color: transparent;
+  box-shadow: none;
 }
-.card.no_bottom {
-  border-bottom: none;
-  padding-bottom: 0;
+.card.border {
+  border: 0.16em solid #094;
+  border-radius: 0.2em;
 }
-.card.no_top {
-  border-top: none;
-  padding-top: 0;
+.card.border_dashed {
+  border: 0.2em dashed #094;
+}
+.card.border_dotted {
+  border: 0.24em dotted #094;
 }
 .card.title {
   margin-top: 2em;
@@ -379,53 +451,8 @@ p > svg > foreignObject {
   z-index: -1;
 }
 
-.h_center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.h_center > table {
-  width: -moz-max-content;
-  width: max-content;
-}
-
-.v_center {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.split {
-  display: flex;
-  flex-wrap: nowrap;
-  margin-bottom: 0.8rem;
-}
-
-.split_l {
-  padding-right: 20px;
-  box-sizing: border-box;
-  width: 50%;
-}
-
-.split_r {
-  padding-left: 20px;
-  box-sizing: border-box;
-  width: 50%;
-}
-
-:is(.split_l, .split_r) > * {
-  margin-bottom: 0;
-}
-
 .memo {
-  margin: 0;
-  width: 880px;
-  padding-top: 0.2rem;
   border-top: 0.3rem dotted #094;
-  font-size: 0.8em;
-  position: absolute;
-  bottom: 60px;
 }
 
 .tips1, .tips3 {

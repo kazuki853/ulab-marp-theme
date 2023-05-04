@@ -1,28 +1,4 @@
 @charset "UTF-8";
-/* @theme theme_U */
-@import url("https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap");
-h1 {
-  font-size: 50px;
-  padding-left: 0.5em;
-  padding-bottom: 0;
-  border-bottom: 0.32em solid #89c3eb;
-  position: relative;
-  margin-bottom: 20px;
-}
-
-h1::after {
-  position: absolute;
-  display: block;
-  content: "";
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 40%;
-  border-bottom: 0.32em solid #dcdcdc;
-}
-
 h2 {
   font-size: 1.3em;
 }
@@ -51,22 +27,13 @@ h5,
 h6 {
   margin: 0 0 0.8rem;
 }
-h1 strong,
-h2 strong,
-h3 strong,
-h4 strong,
-h5 strong,
-h6 strong {
-  font-weight: inherit;
-  color: #89c3eb;
-}
 h1::part(auto-scaling),
 h2::part(auto-scaling),
 h3::part(auto-scaling),
 h4::part(auto-scaling),
 h5::part(auto-scaling),
 h6::part(auto-scaling) {
-  max-height: 620px;
+  max-height: 600px;
 }
 
 p {
@@ -81,54 +48,41 @@ table {
   overflow: visible;
 }
 
-ul, ol {
-  padding-left: 1.6em;
-}
-
-ul > li {
-  position: relative;
-  list-style: none;
-}
-ul > li:before {
-  content: "";
-  background-color: #89c3eb;
-  width: 0.8em;
-  height: 0.8em;
-  border-radius: 50%;
-  position: absolute;
-  top: 0.28em;
-  left: -1.2em;
-}
-ul > li > ul > li:before {
-  width: 0.6em;
-  height: 0.6em;
-  top: 0.38em;
-  left: -1.1em;
-  border-radius: 0;
-}
-
-ol {
-  counter-reset: item;
-}
-
-ol > li {
-  position: relative;
-}
-ol > li::marker {
-  position: absolute;
-  left: -1.2em;
-  font-weight: bold;
-  color: #5dade4;
-}
-
 blockquote {
-  margin: 0;
-  width: 880px;
-  padding-top: 0.2rem;
-  border-top: 0.2rem dashed #89c3eb;
-  font-size: 0.8em;
-  position: absolute;
-  bottom: 60px;
+  border-left: 5px solid #cccccc;
+  margin-left: 0;
+  padding-left: 1em;
+}
+blockquote > p {
+  margin-bottom: 0.2em;
+}
+
+pre {
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+p code {
+  padding: 0.2em 0.4em;
+  border-radius: 0.4em;
+}
+
+pre,
+p code {
+  background-color: #404040;
+  color: #fff;
+}
+
+.code_white pre,
+.code_white p code {
+  background-color: #f2f2f2;
+  color: #404040;
+}
+
+.code_black pre,
+.code_black p code {
+  background-color: #404040;
+  color: #fff;
 }
 
 a,
@@ -143,19 +97,9 @@ section {
   display: flex;
   flex-flow: column nowrap;
   font-size: 20px;
-  font-family: "メイリオ", sans-serif;
-  color: #404040;
-  background-color: white;
   width: 960px;
   height: 720px;
-  padding: 40px 40px 60px;
-}
-section > *:last-child, section[data-footer] > :nth-last-child(2) {
-  margin-bottom: 0;
-}
-section > *:first-child,
-section > header:first-child + * {
-  margin-top: 0;
+  padding: 60px 40px 60px;
 }
 section[data-color] h1,
 section[data-color] h2,
@@ -171,74 +115,71 @@ section.fs20 {
 section.fs24 {
   font-size: 24px;
 }
-section.fs28 {
-  font-size: 28px;
-}
 section.fs32 {
   font-size: 32px;
-}
-section.fs36 {
-  font-size: 36px;
 }
 section.invert {
   background-color: #333333;
   color: #e6e6e6;
 }
-section.cover {
+section.mokuji h2 {
+  font-size: 1.6em;
+}
+section.mokuji li {
   position: relative;
-  background-color: #fff;
-  background-image: url(./images/ulab_blue.svg), repeating-linear-gradient(150deg, transparent, transparent 19px, #f2f2f2 20px, #f2f2f2 39px, transparent 40px);
-  background-repeat: no-repeat, no-repeat;
-  background-size: 30%, auto;
-  background-position: 90% 85%, center;
-  justify-content: center;
+  display: block;
+  list-style: none;
+  font-size: 1.3em;
+  border-bottom: 1px solid #808080;
+  margin-bottom: 0.4em;
 }
-section.cover h1 {
-  border-bottom: 0.16em solid #89c3eb;
-  padding-left: 0;
-  text-align: center;
+section.mokuji li a {
+  text-decoration: none;
 }
-section.cover h1::after {
+section.mokuji li:before {
   display: none;
+}
+section.mokuji li .no {
+  position: absolute;
+  right: 0.5em;
+  display: inline-block;
+  width: 3em;
+  text-align: right;
 }
 
 header,
 footer {
   margin: 0;
   position: absolute;
-  color: #999999;
-  font-size: 24px;
+  font-size: 16px;
   line-height: 1;
 }
 
 header {
-  top: 0px;
+  top: 28px;
   right: 40px;
 }
 
 footer {
-  bottom: 20px;
+  bottom: 28px;
   left: 40px;
 }
+
 footer > .fcenter {
   width: 880px;
   position: fixed;
   left: 40px;
   text-align: center;
-  color: #999999;
-  font-size: 24px;
+  font-size: 16px;
   line-height: 1;
 }
 
 section::after {
-  line-height: 1;
-  font-size: 40px;
-  height: 40px;
   padding: 0;
-  position: absolute;
-  top: 59px;
-  right: 60px;
-  color: #999999;
+  bottom: 28px;
+  right: 40px;
+  font-size: 16px;
+  line-height: 1;
 }
 
 .katex {
@@ -253,8 +194,20 @@ section::after {
   margin: 0;
 }
 
+.katex-display > .katex > .katex-html {
+  position: initial;
+}
+
 [data-marp-fitting-svg-content] {
   width: 99%;
+}
+
+mjx-container {
+  font-size: 0.75em;
+}
+
+mjx-container:not([display=true]) {
+  margin: 0 0.2em;
 }
 
 /* 分数の上が欠ける対策 */
@@ -270,56 +223,8 @@ p > svg > foreignObject {
   padding: 0.5em 1.5em;
   margin-bottom: 0.8rem;
 }
-.card.bg, .card.title {
-  background-color: #f2f2f2;
-  box-shadow: 5px 5px 0 #d9d9d9;
-}
 .card > *:last-child {
   margin-bottom: 0;
-}
-.card.border {
-  border: 0.16em solid #89c3eb;
-  border-radius: 0.2em;
-}
-.card.border_dashed {
-  border: 0.2em dashed #89c3eb;
-}
-.card.border_dotted {
-  border: 0.24em dotted #89c3eb;
-}
-.card.no_bottom {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-.card.no_top {
-  border-top: none;
-  padding-top: 0;
-}
-.card.title {
-  margin-top: 2em;
-  position: relative;
-  z-index: 0;
-}
-.card.title > p:first-child {
-  display: flex;
-  align-items: center;
-  height: 2em;
-  padding: 0 1em;
-  background-color: #89c3eb;
-  color: #fff;
-  position: absolute;
-  left: 0;
-  top: -2em;
-}
-.card.title > p:first-child:after {
-  content: "";
-  height: calc(2em - 5px);
-  width: 1em;
-  background-color: #5dade4;
-  position: absolute;
-  top: 5px;
-  right: -5px;
-  z-index: -1;
 }
 
 .h_center {
@@ -359,6 +264,218 @@ p > svg > foreignObject {
 
 :is(.split_l, .split_r) > * {
   margin-bottom: 0;
+}
+
+.memo {
+  margin: 0;
+  width: 880px;
+  padding-top: 0.2rem;
+  font-size: 0.8em;
+  position: absolute;
+  bottom: 60px;
+}
+
+/* @theme theme_U */
+h1 {
+  font-size: 50px;
+  padding-left: 0.5em;
+  padding-bottom: 0;
+  border-bottom: 0.32em solid #89c3eb;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+h1::after {
+  position: absolute;
+  display: block;
+  content: "";
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 40%;
+  border-bottom: 0.32em solid #dcdcdc;
+}
+
+h1 strong,
+h2 strong,
+h3 strong,
+h4 strong,
+h5 strong,
+h6 strong {
+  font-weight: inherit;
+  color: #89c3eb;
+}
+h1::part(auto-scaling),
+h2::part(auto-scaling),
+h3::part(auto-scaling),
+h4::part(auto-scaling),
+h5::part(auto-scaling),
+h6::part(auto-scaling) {
+  max-height: 620px;
+}
+
+ul > li {
+  position: relative;
+  list-style: none;
+}
+ul > li:before {
+  content: "";
+  background-color: #89c3eb;
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.28em;
+  left: -1.2em;
+}
+ul > li > ul > li:before {
+  width: 0.6em;
+  height: 0.6em;
+  top: 0.38em;
+  left: -1.1em;
+  border-radius: 0;
+}
+
+ol {
+  counter-reset: item;
+}
+
+ol > li {
+  position: relative;
+}
+ol > li::marker {
+  position: absolute;
+  left: -1.2em;
+  font-weight: bold;
+  color: #5dade4;
+}
+
+section {
+  font-family: "メイリオ", sans-serif;
+  color: #404040;
+  background-color: white;
+  padding: 40px 40px 60px;
+}
+section.section_title {
+  justify-content: center;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23daf6e6' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+section.section_title h1 {
+  padding: initial;
+  color: #89c3eb;
+  background: initial;
+  border-radius: initial;
+  box-shadow: initial;
+  margin-left: 20px;
+}
+section.section_title h1 > span {
+  display: inline-block;
+  background-color: #89c3eb;
+  box-shadow: 5px 5px 0 #5dade4;
+  color: #fff;
+  font-size: 1.6em;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 150px;
+  vertical-align: middle;
+  margin-right: 30px;
+}
+section.section_title > *:not(h1, footer) {
+  margin-left: 200px;
+}
+section.cover {
+  position: relative;
+  background-color: #fff;
+  background-image: url(./images/ulab_blue.svg), repeating-linear-gradient(150deg, transparent, transparent 19px, #f2f2f2 20px, #f2f2f2 39px, transparent 40px);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 30%, auto;
+  background-position: 90% 85%, center;
+  justify-content: center;
+}
+section.cover h1 {
+  border-bottom: 0.16em solid #89c3eb;
+  padding-left: 0;
+  text-align: center;
+}
+section.cover h1::after {
+  display: none;
+}
+
+header,
+footer,
+footer > .fcenter,
+section::after {
+  color: #999999;
+  font-size: 24px;
+}
+
+header::after {
+  content: "（このテーマはheaderに対応していません）";
+  color: red;
+}
+
+section::after {
+  line-height: 1;
+  font-size: 40px;
+  height: 40px;
+  padding: 0;
+  position: absolute;
+  bottom: auto;
+  top: 59px;
+  right: 60px;
+  color: #999999;
+}
+
+.card {
+  background-color: #f2f2f2;
+  box-shadow: 5px 5px 0 #d9d9d9;
+}
+.card.border, .card.border_dashed, .card.border_dotted {
+  background-color: transparent;
+  box-shadow: none;
+}
+.card.border {
+  border: 0.16em solid #89c3eb;
+  border-radius: 0.2em;
+}
+.card.border_dashed {
+  border: 0.2em dashed #89c3eb;
+}
+.card.border_dotted {
+  border: 0.24em dotted #89c3eb;
+}
+.card.title {
+  margin-top: 2em;
+  position: relative;
+  z-index: 0;
+}
+.card.title > p:first-child {
+  display: flex;
+  align-items: center;
+  height: 2em;
+  padding: 0 1em;
+  background-color: #89c3eb;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  top: -2em;
+}
+.card.title > p:first-child:after {
+  content: "";
+  height: calc(2em - 5px);
+  width: 1em;
+  background-color: #5dade4;
+  position: absolute;
+  top: 5px;
+  right: -5px;
+  z-index: -1;
+}
+
+.memo {
+  border-top: 0.2rem dashed #89c3eb;
 }
 
 .tips1, .tips4, .tips3 {

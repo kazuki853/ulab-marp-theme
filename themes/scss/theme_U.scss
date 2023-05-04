@@ -1,0 +1,278 @@
+/* @theme theme_U */
+
+@use "main";
+
+$main-text-color: lighten(#000, 25%);
+$main-highlight-color: #89c3eb;
+$main-bg-color: white;
+$main-font-family: "メイリオ", sans-serif;
+$main-strong-font-family: $main-font-family;
+$header-footer-color: lighten(#000, 60%);
+
+// mainを上書きする感じで
+$section-padding-top: 40px;
+$header-footer-font-size: 24px;
+
+h1 {
+    // font-size: 1.6em;
+    font-size: 50px;
+    padding-left: 0.5em;
+    padding-bottom: 0;
+    border-bottom: 0.32em solid $main-highlight-color;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+h1::after{
+    position: absolute;
+    display: block;
+    content: "";
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 40%;
+    border-bottom: 0.32em solid #dcdcdc;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    strong {
+        font-weight: inherit;
+        color: $main-highlight-color;
+    }
+
+    &::part(auto-scaling) {
+        max-height: main.$section-height - ($section-padding-top + main.$section-padding-bottom); // Slide height - padding * 2
+    }
+}
+
+ul>li {
+    position: relative;
+    list-style: none;
+
+    &:before {
+        content: "";
+        background-color: $main-highlight-color;
+        width: 0.8em;
+        height: 0.8em;
+        border-radius: 50%;
+        position: absolute;
+        top: 0.28em;
+        left: -1.2em;
+    }
+
+    &>ul>li {
+        &:before {
+            width: 0.6em;
+            height: 0.6em;
+            top: 0.38em;
+            left: -1.1em;
+            border-radius: 0;
+        }
+    }
+}
+
+ol {
+    counter-reset: item;
+}
+
+ol>li {
+    position: relative;
+
+    &::marker {
+        position: absolute;
+        left: -1.2em;
+        // font-size: 1.2em;
+        font-weight: bold;
+        color: darken($main-highlight-color, 10%);
+    }
+}
+
+section {
+    font-family: $main-font-family;
+    color: $main-text-color;
+    background-color: $main-bg-color;
+
+    padding: $section-padding-top main.$section-padding-lr main.$section-padding-bottom;
+
+    &.section_title {
+        justify-content: center;
+        background-color: #ffffff;
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23daf6e6' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+
+        h1 {
+            padding: initial;
+            color: $main-highlight-color;
+            background: initial;
+            border-radius: initial;
+            box-shadow: initial;
+            margin-left: 20px;
+
+            >span {
+                display: inline-block;
+                background-color: $main-highlight-color;
+                box-shadow: 5px 5px 0 darken($main-highlight-color, 10%);
+                color: #fff;
+                font-size: 1.6em;
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 150px;
+                vertical-align: middle;
+                margin-right: 30px;
+            }
+        }
+
+        >*:not(h1, footer) {
+            margin-left: 200px;
+        }
+    }
+
+    &.cover {
+        position: relative;
+        background-color: #fff;
+        background-image: url(./images/ulab_blue.svg),
+            repeating-linear-gradient(150deg, transparent, transparent 19px, lighten(#000, 95%) 20px, lighten(#000, 95%) 39px, transparent 40px);
+        background-repeat: no-repeat, no-repeat;
+        background-size: 30%, auto;
+        background-position: 90% 85%, center;
+        justify-content: center;
+
+        h1 {
+            border-bottom: 0.16em solid $main-highlight-color;
+            padding-left: 0;
+            text-align: center;
+        }
+
+        h1::after {
+            display: none;
+        }
+    }
+}
+
+header,
+footer,
+footer > .fcenter,
+section::after {
+    color: $header-footer-color;
+    // ここで上書き
+    font-size: $header-footer-font-size;
+}
+
+header::after {
+    content: "（このテーマはheaderに対応していません）";
+    color: red;
+}
+
+//paginate
+section::after {
+    line-height: 1;
+    font-size: 40px;
+    height: 40px;
+    padding: 0;
+    position: absolute;
+    bottom: auto; // mainでのbottomの設定を初期値に戻しておく
+    top: $section-padding-top + 75px - 40px - 16px;
+    right: main.$section-padding-lr + 20px;
+    color: $header-footer-color;
+}
+
+.card {
+    background-color: lighten(#000, 95%);
+    box-shadow: 5px 5px 0 darken(lighten(#000, 95%), 10%);
+
+    &.border,
+    &.border_dashed,
+    &.border_dotted {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    &.border{
+        border: 0.16em solid $main-highlight-color;
+        border-radius: 0.2em;
+    }
+
+    &.border_dashed{
+        border: 0.2em dashed $main-highlight-color;
+    }
+
+    &.border_dotted{
+        border: 0.24em dotted $main-highlight-color;
+    }
+
+    &.title {
+        margin-top: 2em;
+        position: relative;
+        // border-top-left-radius: 0;
+        z-index: 0;
+    }
+    
+    &.title>p:first-child {
+        display: flex;
+        align-items: center;
+        height: 2em;
+        padding: 0 1em;
+        // border-radius: 0.8rem 0.8rem 0 0;
+        background-color: $main-highlight-color;
+        color: #fff;
+        position: absolute;
+        left: 0;
+        top: -2em;
+    }
+    
+    &.title>p:first-child:after {
+        content: "";
+        height: calc(2em - 5px);
+        width: 1em;
+        background-color: darken($main-highlight-color, 10%);
+        position: absolute;
+        top: 5px;
+        right: -5px;
+        // border-radius: 0 0.8rem 0 0;
+        z-index: -1;
+    }
+}
+
+.memo {
+    border-top: 0.2rem dashed $main-highlight-color;
+}
+
+.tips1 {
+    background-color: $main-highlight-color;
+    color: $main-bg-color;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 0.1em 0.4em;
+    border-radius: 0.4em;
+    margin-right: 0.5em;
+}
+
+.tips2 {
+    color: $main-highlight-color;
+    border: 0.1em solid;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 0.1em 0.4em;
+    border-radius: 0.4em;
+    margin-right: 0.5em;
+}
+
+.tips3 {
+    @extend .tips1;
+    box-shadow: 3px 3px 0 darken($main-highlight-color, 10%);
+}
+
+.tips4 {
+    @extend .tips1;
+    color: $main-text-color;
+    border-radius: 0;
+    font-weight: normal;
+}
+
+
