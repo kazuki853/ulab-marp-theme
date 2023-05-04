@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: theme_E
+theme: theme_U
 paginate: true
 header: ここにヘッダーの内容を書きます
 footer: ここにフッターの内容を書きます
@@ -31,7 +31,7 @@ math: katex
 
 # もくじ
 
-## **2.4 劣モジュラ最適化と多面体**
+## 2.4 劣モジュラ最適化と多面体
 - <a href="#5">2.4.1 劣モジュラ多面体と基多面体<span class="no">5</span></a>
 - <a href="#10">2.4.2 基多面体の端点<span class="no">10</span></a>
 - <a href="#21">2.4.3 基多面体と劣モジュラ関数最小化<span class="no">21</span></a>
@@ -47,7 +47,6 @@ math: katex
 
 <!-- section_titleではspanタグで囲った部分が強調されます。 -->
 # <span>1</span>このテーマの使い方
-
 
 ---
 

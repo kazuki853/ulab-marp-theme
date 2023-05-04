@@ -102,34 +102,32 @@ section {
     &.section_title {
         justify-content: center;
         background-color: #ffffff;
-        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23daf6e6' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
 
         h1 {
             padding: initial;
             color: $main-highlight-color;
             background: initial;
+            border: none;
             border-radius: initial;
             box-shadow: initial;
-            margin-left: 20px;
+            color: $main-text-color;
+            text-align: center;
+
+            &::after {
+                display: none;
+            }
 
             >span {
-                display: inline-block;
-                background-color: $main-highlight-color;
-                box-shadow: 5px 5px 0 darken($main-highlight-color, 10%);
-                color: #fff;
-                font-size: 1.6em;
-                width: 150px;
-                height: 150px;
-                border-radius: 50%;
-                text-align: center;
-                line-height: 150px;
+                color: $main-highlight-color;
+                font-size: 2em;
                 vertical-align: middle;
-                margin-right: 30px;
+                margin-right: 0.4em;
             }
         }
 
         >*:not(h1, footer) {
-            margin-left: 200px;
+            text-align: center;
+
         }
     }
 
@@ -274,5 +272,3 @@ section::after {
     border-radius: 0;
     font-weight: normal;
 }
-
-
