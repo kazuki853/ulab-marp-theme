@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* @theme theme_E */
+/* @theme theme_A */
 @import url("https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap");
 h2 {
   font-size: 1.3em;
@@ -282,11 +282,7 @@ p > svg > foreignObject {
 
 h1 {
   font-size: 1.6em;
-  padding: 0.4em 1em;
-  color: white;
-  background-color: #094;
-  border-radius: 0.8rem;
-  box-shadow: 5px 5px 0 #00662d;
+  color: #3eb370;
 }
 
 h1 strong,
@@ -296,7 +292,7 @@ h4 strong,
 h5 strong,
 h6 strong {
   font-weight: inherit;
-  color: #094;
+  color: #3eb370;
 }
 
 ul > li {
@@ -306,96 +302,76 @@ ul > li {
 ul > li:before {
   content: "";
   position: absolute;
-  top: 0.18em;
-  left: -30px;
-  transform: rotate(50deg);
-  width: 0.3em;
-  height: 0.8em;
-  border-right: 5px solid #094;
-  border-bottom: 5px solid #094;
+  top: 0.45em;
+  left: -1em;
+  width: 0.5em;
+  height: 0.5em;
+  background-color: #3eb370;
+}
+
+ol {
+  counter-reset: item;
+}
+
+ol > li {
+  position: relative;
+}
+ol > li::marker {
+  position: absolute;
+  left: -1.2em;
+  font-weight: bold;
+  color: #3eb370;
 }
 
 section {
-  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-family: "Segoe UI", "メイリオ", sans-serif;
   color: #404040;
   background-color: white;
 }
 section.section_title {
   justify-content: center;
   background-color: #ffffff;
-  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23daf6e6' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
 }
 section.section_title h1 {
   padding: initial;
-  color: #094;
+  color: #3eb370;
   background: initial;
+  border: none;
   border-radius: initial;
   box-shadow: initial;
-  margin-left: 20px;
+  color: #404040;
+  font-size: 2rem;
+  border-bottom: 1px #3eb370 solid;
+  padding-left: 3rem;
 }
 section.section_title h1 > span {
-  display: inline-block;
-  background-color: #094;
-  box-shadow: 5px 5px 0 #00662d;
-  color: #fff;
-  font-size: 1.6em;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 150px;
-  vertical-align: middle;
-  margin-right: 30px;
+  color: #3eb370;
+  vertical-align: baseline;
+  margin-right: 1.2em;
 }
 section.section_title > *:not(h1, footer) {
-  margin-left: 200px;
+  padding-left: 3rem;
 }
 section.cover {
   position: relative;
-  background-color: #ffffff;
-  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23daf6e6' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+  background-color: #3eb370;
+  justify-content: center;
+  padding: 60px;
+  font-size: 24px;
+  font-weight: bold;
 }
-section.cover:before {
-  content: "";
-  position: absolute;
-  top: 150px;
-  left: 40px;
-  width: 880px;
-  height: 300px;
-  background-color: #094;
-  border-radius: 0.8em;
-  box-shadow: 5px 5px 0 #00662d;
-}
-section.cover :where(h1, h2, h3):first-of-type {
+section.cover h1, section.cover h2, section.cover h3, section.cover p {
   color: #fff;
-  position: absolute;
-  left: 70px;
 }
-section.cover h1:first-of-type {
+section.cover h1 {
+  background-color: initial;
+  box-shadow: none;
   padding: initial;
-  background: initial;
-  border-radius: initial;
-  box-shadow: initial;
-  top: 180px;
-  font-size: 3em;
-  font-weight: 500;
 }
-section.cover h2:first-of-type {
-  top: 280px;
-  font-size: 1.8em;
-  color: #fff;
-}
-section.cover h3:first-of-type {
-  top: 340px;
-  font-size: 1.6em;
-  color: #fff;
-}
-section.cover p:first-of-type {
-  position: absolute;
-  top: 480px;
-  right: 50px;
-  font-size: 1.5em;
-  text-align: right;
+section.cover p {
+  position: fixed;
+  left: 60px;
+  bottom: 30px;
 }
 
 header,
@@ -406,60 +382,36 @@ section::after {
 }
 
 .card {
+  background-color: #d6e9ca;
+  padding: 1em 1.5em;
+}
+.card.bg_gray {
   background-color: #f2f2f2;
-  border-radius: 0.8rem;
-  box-shadow: 5px 5px 0 #d9d9d9;
 }
 .card.border, .card.border_dashed, .card.border_dotted {
   background-color: transparent;
   box-shadow: none;
 }
 .card.border {
-  border: 0.16em solid #094;
+  border: 0.16em solid #3eb370;
   border-radius: 0.2em;
 }
 .card.border_dashed {
-  border: 0.2em dashed #094;
+  border: 0.2em dashed #3eb370;
 }
 .card.border_dotted {
-  border: 0.24em dotted #094;
-}
-.card.title {
-  margin-top: 2em;
-  position: relative;
-  border-top-left-radius: 0;
-  z-index: 0;
+  border: 0.24em dotted #3eb370;
 }
 .card.title > p:first-child {
-  display: flex;
-  align-items: center;
-  height: 2em;
-  padding: 0 1em;
-  border-radius: 0.8rem 0.8rem 0 0;
-  background-color: #094;
-  color: #fff;
-  position: absolute;
-  left: 0;
-  top: -2em;
-}
-.card.title > p:first-child:after {
-  content: "";
-  height: calc(2em - 5px);
-  width: 1em;
-  background-color: #00662d;
-  position: absolute;
-  top: 5px;
-  right: -5px;
-  border-radius: 0 0.8rem 0 0;
-  z-index: -1;
+  color: #2a7a4c;
 }
 
 .memo {
-  border-top: 0.3rem dotted #094;
+  border-top: 0.2rem dashed #3eb370;
 }
 
-.tips1, .tips3 {
-  background-color: #094;
+.tips1 {
+  background-color: #3eb370;
   color: white;
   font-size: 1em;
   font-weight: 700;
@@ -469,15 +421,11 @@ section::after {
 }
 
 .tips2 {
-  color: #094;
+  color: #3eb370;
   border: 0.1em solid;
   font-size: 1em;
   font-weight: 700;
   padding: 0.1em 0.4em;
   border-radius: 0.4em;
   margin-right: 0.5em;
-}
-
-.tips3 {
-  box-shadow: 3px 3px 0 #00662d;
-}/*# sourceMappingURL=theme_E.css.map */
+}/*# sourceMappingURL=theme_A.css.map */

@@ -133,13 +133,16 @@ section.mokuji li {
   border-bottom: 1px solid #808080;
   margin-bottom: 0.4em;
 }
-section.mokuji li a {
-  text-decoration: none;
-}
-section.mokuji li:before {
+section.mokuji li::before {
   display: none;
 }
-section.mokuji li .no {
+section.mokuji a {
+  text-decoration: none;
+}
+section.mokuji:before {
+  display: none;
+}
+section.mokuji .no {
   position: absolute;
   right: 0.5em;
   display: inline-block;

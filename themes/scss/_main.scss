@@ -306,22 +306,26 @@ section {
             font-size: 1.3em;
             border-bottom: 1px solid #808080;
             margin-bottom: 0.4em;
+        }
 
-            a {
-                text-decoration: none;
-            }
+        li::before{
+            display: none;
+        }
 
-            &:before{
-                display: none;
-            }
+        a {
+            text-decoration: none;
+        }
 
-            .no{
-                position: absolute;
-                right: 0.5em;
-                display: inline-block;
-                width: 3em;
-                text-align: right;
-            }
+        &:before{
+            display: none;
+        }
+
+        .no{
+            position: absolute;
+            right: 0.5em;
+            display: inline-block;
+            width: 3em;
+            text-align: right;
         }
     }
 }
