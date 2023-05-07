@@ -1,0 +1,209 @@
+/* @theme theme_C */
+
+@use "main";
+
+// web fonts
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$main-text-color: lighten(#000, 25%);
+$main-highlight-color: #1e90ff;
+$main-bg-color: white;
+$main-font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+$main-strong-font-family: $main-font-family;
+$header-footer-color: lighten(#000, 60%);
+
+h1 {
+    font-size: 1.6em;
+    padding: 0.2em 0.4em;
+    color: $main-highlight-color;
+    border-bottom: 4px double $main-highlight-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    strong {
+        font-weight: inherit;
+        color: $main-highlight-color;
+    }
+}
+
+ul>li{
+    position: relative;
+    list-style: none;
+
+    &:before{
+        content: "";
+        position: absolute;
+        top: 0.18em;
+        left: -30px;
+        -webkit-transform: rotate(50deg);
+        -ms-transform: rotate(50deg);
+        transform: rotate(50deg);
+        width: 0.3em;
+        height: 0.8em;
+        border-right: 5px solid $main-highlight-color;
+        border-bottom: 5px solid $main-highlight-color;
+    }
+}
+
+ol {
+    counter-reset: item;
+}
+
+ol>li {
+    position: relative;
+
+    &::marker {
+        position: absolute;
+        left: -1.2em;
+        // font-size: 1.2em;
+        font-weight: bold;
+        color: $main-highlight-color;
+    }
+}
+
+section {
+    font-family: $main-font-family;
+    color: $main-text-color;
+    background-color: $main-bg-color;
+
+    &.section_title {
+        justify-content: center;
+        background-color: #fff;
+        background-image:  linear-gradient(#f2f8ff 3.2px, transparent 3.2px), linear-gradient(90deg, #f2f8ff 3.2px, transparent 3.2px), linear-gradient(#f2f8ff 1.6px, transparent 1.6px), linear-gradient(90deg, #f2f8ff 1.6px, #ffffff 1.6px);
+        background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px;
+        background-position: -3.2px -3.2px, -3.2px -3.2px, -1.6px -1.6px, -1.6px -1.6px;
+
+        h1 {
+            margin-left: 1em;
+            padding: initial;
+            border: initial;
+            font-size: 2em;
+            >span {
+                font-size: 4em;
+                margin-right: 0.2em;
+                vertical-align: -0.05em;
+                font-weight: 900;
+            }
+        }
+    }
+
+    &.cover {
+        position: relative;
+        background-color: $main-bg-color;
+        background-image:  linear-gradient(30deg, #f2f8ff 12%, transparent 12.5%, transparent 87%, #f2f8ff 87.5%, #f2f8ff), linear-gradient(150deg, #f2f8ff 12%, transparent 12.5%, transparent 87%, #f2f8ff 87.5%, #f2f8ff), linear-gradient(30deg, #f2f8ff 12%, transparent 12.5%, transparent 87%, #f2f8ff 87.5%, #f2f8ff), linear-gradient(150deg, #f2f8ff 12%, transparent 12.5%, transparent 87%, #f2f8ff 87.5%, #f2f8ff), linear-gradient(60deg, #f2f8ff77 25%, transparent 25.5%, transparent 75%, #f2f8ff77 75%, #f2f8ff77), linear-gradient(60deg, #f2f8ff77 25%, transparent 25.5%, transparent 75%, #f2f8ff77 75%, #f2f8ff77);
+        background-size: 80px 140px;
+        background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+        justify-content: center;
+
+        &:before {
+            content: "";
+            background: #1564b3;
+            width: 800px;
+            height: 1000px;
+            transform: rotate(15deg);
+            position: absolute;
+            top: -200px;
+            left: -200px;
+            z-index: 1;
+        }
+        
+        h1, h2, h3, h4, p {
+            color: #fff;
+            z-index: 2;
+        }
+
+        h1 {
+            padding: initial;
+            border: initial;
+            font-size: 2.4em;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            color: #fff;
+        }
+
+        h3 {
+            top: 340px;
+            font-size: 1.4em;
+            color: #fff;
+        }
+
+        p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            position: fixed;
+            left: main.$section-padding-lr;
+            bottom: main.$section-padding-lr;
+        }
+    }
+}
+
+header,
+footer,
+footer > .fcenter,
+section::after {
+    color: $header-footer-color;
+}
+
+.card {
+    background-color: lighten(#000, 95%);
+
+    &.border,
+    &.border_dashed,
+    &.border_dotted {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    &.border{
+        border: 0.16em solid $main-highlight-color;
+        border-radius: 0.2em;
+    }
+
+    &.border_dashed{
+        border: 0.2em dashed $main-highlight-color;
+    }
+
+    &.border_dotted{
+        border: 0.24em dotted $main-highlight-color;
+    }
+
+    &.title {
+        border-left: 8px solid $main-highlight-color;
+    }
+    
+    &.title>p:first-child {
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+}
+
+.memo {
+    border-top: 1px solid $main-highlight-color;
+}
+
+.tips1 {
+    background-color: $main-highlight-color;
+    color: $main-bg-color;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 0.2em 0.4em;
+    margin-right: 0.5em;
+}
+
+.tips2 {
+    color: $main-highlight-color;
+    border: 0.1em solid;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 0.2em 0.4em;
+    margin-right: 0.5em;
+}
+
+

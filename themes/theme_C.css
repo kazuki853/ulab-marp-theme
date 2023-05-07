@@ -1,6 +1,6 @@
 @charset "UTF-8";
-/* @theme theme_B */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap");
+/* @theme theme_C */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 h2 {
   font-size: 1.3em;
 }
@@ -294,17 +294,11 @@ p > svg > foreignObject {
 
 h1 {
   font-size: 1.6em;
-  color: #4b4b4b;
+  padding: 0.2em 0.4em;
+  color: #1e90ff;
+  border-bottom: 4px double #1e90ff;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Noto Sans JP", sans-serif;
-}
 h1 strong,
 h2 strong,
 h3 strong,
@@ -312,11 +306,7 @@ h4 strong,
 h5 strong,
 h6 strong {
   font-weight: inherit;
-  color: #4b4b4b;
-}
-
-strong {
-  font-family: "Noto Sans JP", sans-serif;
+  color: #1e90ff;
 }
 
 ul > li {
@@ -326,12 +316,13 @@ ul > li {
 ul > li:before {
   content: "";
   position: absolute;
-  top: 0.55em;
-  left: -1em;
+  top: 0.18em;
+  left: -30px;
+  transform: rotate(50deg);
   width: 0.3em;
-  height: 0.3em;
-  border-radius: 50%;
-  border: 0.1em #4b4b4b solid;
+  height: 0.8em;
+  border-right: 5px solid #1e90ff;
+  border-bottom: 5px solid #1e90ff;
 }
 
 ol {
@@ -344,56 +335,77 @@ ol > li {
 ol > li::marker {
   position: absolute;
   left: -1.2em;
-  font-weight: 900;
-  color: #4b4b4b;
+  font-weight: bold;
+  color: #1e90ff;
 }
 
 section {
-  font-family: "Noto Serif JP", sans-serif;
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
   color: #404040;
   background-color: white;
 }
 section.section_title {
   justify-content: center;
-  background-color: #ffffff;
+  background-color: #fff;
+  background-image: linear-gradient(#f2f8ff 3.2px, transparent 3.2px), linear-gradient(90deg, #f2f8ff 3.2px, transparent 3.2px), linear-gradient(#f2f8ff 1.6px, transparent 1.6px), linear-gradient(90deg, #f2f8ff 1.6px, #ffffff 1.6px);
+  background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px;
+  background-position: -3.2px -3.2px, -3.2px -3.2px, -1.6px -1.6px, -1.6px -1.6px;
 }
-section.section_title h1:first-of-type {
+section.section_title h1 {
+  margin-left: 1em;
   padding: initial;
-  color: #4b4b4b;
-  position: absolute;
-  left: 0;
-  width: 960px;
+  border: initial;
   font-size: 2em;
-  text-align: center;
-  border-top: 1px #4b4b4b solid;
-  border-bottom: 1px #4b4b4b solid;
-  line-height: 2em;
 }
-section.section_title h1:first-of-type > span {
-  border-right: 1px #4b4b4b solid;
-  display: inline-block;
-  margin-right: 1em;
-  padding-right: 1em;
-}
-section.section_title > *:not(h1, footer) {
-  padding-left: 3rem;
+section.section_title h1 > span {
+  font-size: 4em;
+  margin-right: 0.2em;
+  vertical-align: -0.05em;
+  font-weight: 900;
 }
 section.cover {
   position: relative;
-  background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(75, 75, 75) 100%);
+  background-color: white;
+  background-image: linear-gradient(30deg, #f2f8ff 12%, transparent 12.5%, transparent 87%, #f2f8ff 87.5%, #f2f8ff), linear-gradient(150deg, #f2f8ff 12%, transparent 12.5%, transparent 87%, #f2f8ff 87.5%, #f2f8ff), linear-gradient(30deg, #f2f8ff 12%, transparent 12.5%, transparent 87%, #f2f8ff 87.5%, #f2f8ff), linear-gradient(150deg, #f2f8ff 12%, transparent 12.5%, transparent 87%, #f2f8ff 87.5%, #f2f8ff), linear-gradient(60deg, rgba(242, 248, 255, 0.4666666667) 25%, transparent 25.5%, transparent 75%, rgba(242, 248, 255, 0.4666666667) 75%, rgba(242, 248, 255, 0.4666666667)), linear-gradient(60deg, rgba(242, 248, 255, 0.4666666667) 25%, transparent 25.5%, transparent 75%, rgba(242, 248, 255, 0.4666666667) 75%, rgba(242, 248, 255, 0.4666666667));
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
   justify-content: center;
-  padding: 60px;
-  font-size: 24px;
-  font-weight: bold;
 }
-section.cover h1, section.cover h2, section.cover h3, section.cover p {
+section.cover:before {
+  content: "";
+  background: #1564b3;
+  width: 800px;
+  height: 1000px;
+  transform: rotate(15deg);
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  z-index: 1;
+}
+section.cover h1, section.cover h2, section.cover h3, section.cover h4, section.cover p {
+  color: #fff;
+  z-index: 2;
+}
+section.cover h1 {
+  padding: initial;
+  border: initial;
+  font-size: 2.4em;
+}
+section.cover h2 {
+  font-size: 1.6em;
+  color: #fff;
+}
+section.cover h3 {
+  top: 340px;
+  font-size: 1.4em;
   color: #fff;
 }
 section.cover p {
+  font-size: 1.2rem;
+  font-weight: bold;
   position: fixed;
-  left: 60px;
-  bottom: 30px;
-  font-weight: 800;
+  left: 40px;
+  bottom: 40px;
 }
 
 header,
@@ -405,67 +417,47 @@ section::after {
 
 .card {
   background-color: #f2f2f2;
-  padding: 1em 1.5em;
 }
 .card.border, .card.border_dashed, .card.border_dotted {
   background-color: transparent;
   box-shadow: none;
 }
 .card.border {
-  border: 0.16em solid #4b4b4b;
+  border: 0.16em solid #1e90ff;
   border-radius: 0.2em;
 }
 .card.border_dashed {
-  border: 0.2em dashed #4b4b4b;
+  border: 0.2em dashed #1e90ff;
 }
 .card.border_dotted {
-  border: 0.24em dotted #4b4b4b;
+  border: 0.24em dotted #1e90ff;
 }
 .card.title {
-  position: relative;
-  margin-top: 0.1em;
-  background-color: white;
-  border: solid 1px #4b4b4b;
-  border-radius: 1.2em;
+  border-left: 8px solid #1e90ff;
 }
 .card.title > p:first-child {
-  display: inline-block;
-  padding: 0 0.4em;
-  background-color: white;
-  position: absolute;
-  top: -0.85em;
-}
-.card.no_bottom {
-  border-bottom: none;
-  border-radius: 30px 30px 0 0;
-  padding-bottom: 0;
-}
-.card.no_top {
-  border-top: none;
-  border-radius: 0 0 30px 30px;
-  padding-top: 0;
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
 .memo {
-  border-top: 1px dashed #4b4b4b;
+  border-top: 1px solid #1e90ff;
 }
 
 .tips1 {
-  background-color: #4b4b4b;
+  background-color: #1e90ff;
   color: white;
   font-size: 1em;
-  font-weight: 700;
-  padding: 0.1em 0.4em;
-  border-radius: 0.4em;
+  font-weight: bold;
+  padding: 0.2em 0.4em;
   margin-right: 0.5em;
 }
 
 .tips2 {
-  color: #4b4b4b;
+  color: #1e90ff;
   border: 0.1em solid;
   font-size: 1em;
-  font-weight: 700;
-  padding: 0.1em 0.4em;
-  border-radius: 0.4em;
+  font-weight: bold;
+  padding: 0.2em 0.4em;
   margin-right: 0.5em;
-}/*# sourceMappingURL=theme_B.css.map */
+}/*# sourceMappingURL=theme_C.css.map */
