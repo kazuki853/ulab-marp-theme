@@ -280,6 +280,18 @@ p > svg > foreignObject {
   bottom: 60px;
 }
 
+.list_bib > ol {
+  counter-reset: list;
+}
+.list_bib > ol > li {
+  list-style: none;
+  counter-increment: list;
+}
+.list_bib > ol > li::marker {
+  content: "[" counter(list, decimal) "] ";
+  font-weight: normal;
+}
+
 h1 {
   font-size: 1.6em;
   padding: 0.4em 1em;

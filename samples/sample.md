@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: theme_U
+theme: theme_E
 paginate: true
 header: ここにヘッダーの内容を書きます
 footer: ここにフッターの内容を書きます
@@ -12,6 +12,7 @@ math: katex
 
 <!-- 最初に_を入れて_headerとすることで、そのページだけに設定を反映させることができます（_class, _paginateも同様）。 -->
 <!-- _header: ""-->
+<!-- _footer: "" -->
 
 <!-- pagineteはページ数を表示するかどうかの設定です。 -->
 <!-- _paginate: false-->
@@ -303,3 +304,18 @@ classで文字の大きさを変更することができます。
 ```
 
 `fs20`, `fs24`, `fs28`, `fs32`があります。
+
+---
+
+<!-- class: fs24 -->
+
+# 参考文献
+
+<div class="list_bib">
+
+1. ああああああああああ
+1. いいいいいいいいいい
+1. うううううううううう
+1. ええええええええええ
+
+</div>

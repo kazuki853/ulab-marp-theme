@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/* @theme theme_B */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap");
 h2 {
   font-size: 1.3em;
 }
@@ -290,12 +292,19 @@ p > svg > foreignObject {
   font-weight: normal;
 }
 
-/* @theme theme_A */
 h1 {
   font-size: 1.6em;
-  color: #3eb370;
+  color: #4b4b4b;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Noto Sans JP", sans-serif;
+}
 h1 strong,
 h2 strong,
 h3 strong,
@@ -303,7 +312,11 @@ h4 strong,
 h5 strong,
 h6 strong {
   font-weight: inherit;
-  color: #3eb370;
+  color: #4b4b4b;
+}
+
+strong {
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 ul > li {
@@ -315,9 +328,10 @@ ul > li:before {
   position: absolute;
   top: 0.55em;
   left: -1em;
-  width: 0.5em;
-  height: 0.5em;
-  background-color: #3eb370;
+  width: 0.3em;
+  height: 0.3em;
+  border-radius: 50%;
+  border: 0.1em #4b4b4b solid;
 }
 
 ol {
@@ -330,12 +344,12 @@ ol > li {
 ol > li::marker {
   position: absolute;
   left: -1.2em;
-  font-weight: bold;
-  color: #3eb370;
+  font-weight: 900;
+  color: #4b4b4b;
 }
 
 section {
-  font-family: "Segoe UI", "メイリオ", sans-serif;
+  font-family: "Noto Serif JP", sans-serif;
   color: #404040;
   background-color: white;
 }
@@ -343,29 +357,30 @@ section.section_title {
   justify-content: center;
   background-color: #ffffff;
 }
-section.section_title h1 {
+section.section_title h1:first-of-type {
   padding: initial;
-  color: #3eb370;
-  background: initial;
-  border: none;
-  border-radius: initial;
-  box-shadow: initial;
-  color: #404040;
-  font-size: 2rem;
-  border-bottom: 1px #3eb370 solid;
-  padding-left: 3rem;
+  color: #4b4b4b;
+  position: absolute;
+  left: 0;
+  width: 960px;
+  font-size: 2em;
+  text-align: center;
+  border-top: 1px #4b4b4b solid;
+  border-bottom: 1px #4b4b4b solid;
+  line-height: 2em;
 }
-section.section_title h1 > span {
-  color: #3eb370;
-  vertical-align: baseline;
-  margin-right: 1.2em;
+section.section_title h1:first-of-type > span {
+  border-right: 1px #4b4b4b solid;
+  display: inline-block;
+  margin-right: 1em;
+  padding-right: 1em;
 }
 section.section_title > *:not(h1, footer) {
   padding-left: 3rem;
 }
 section.cover {
   position: relative;
-  background-color: #3eb370;
+  background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(75, 75, 75) 100%);
   justify-content: center;
   padding: 60px;
   font-size: 24px;
@@ -374,15 +389,11 @@ section.cover {
 section.cover h1, section.cover h2, section.cover h3, section.cover p {
   color: #fff;
 }
-section.cover h1 {
-  background-color: initial;
-  box-shadow: none;
-  padding: initial;
-}
 section.cover p {
   position: fixed;
   left: 60px;
   bottom: 30px;
+  font-weight: 800;
 }
 
 header,
@@ -393,36 +404,54 @@ section::after {
 }
 
 .card {
-  background-color: #d6e9ca;
-  padding: 1em 1.5em;
-}
-.card.bg_gray {
   background-color: #f2f2f2;
+  padding: 1em 1.5em;
 }
 .card.border, .card.border_dashed, .card.border_dotted {
   background-color: transparent;
   box-shadow: none;
 }
 .card.border {
-  border: 0.16em solid #3eb370;
+  border: 0.16em solid #4b4b4b;
   border-radius: 0.2em;
 }
 .card.border_dashed {
-  border: 0.2em dashed #3eb370;
+  border: 0.2em dashed #4b4b4b;
 }
 .card.border_dotted {
-  border: 0.24em dotted #3eb370;
+  border: 0.24em dotted #4b4b4b;
+}
+.card.title {
+  position: relative;
+  margin-top: 0.1em;
+  background-color: white;
+  border: solid 1px #4b4b4b;
+  border-radius: 1.2em;
 }
 .card.title > p:first-child {
-  color: #2a7a4c;
+  display: inline-block;
+  padding: 0 0.4em;
+  background-color: white;
+  position: absolute;
+  top: -0.85em;
+}
+.card.no_bottom {
+  border-bottom: none;
+  border-radius: 30px 30px 0 0;
+  padding-bottom: 0;
+}
+.card.no_top {
+  border-top: none;
+  border-radius: 0 0 30px 30px;
+  padding-top: 0;
 }
 
 .memo {
-  border-top: 0.2rem dashed #3eb370;
+  border-top: 0.2rem dashed #4b4b4b;
 }
 
 .tips1 {
-  background-color: #3eb370;
+  background-color: #4b4b4b;
   color: white;
   font-size: 1em;
   font-weight: 700;
@@ -432,11 +461,11 @@ section::after {
 }
 
 .tips2 {
-  color: #3eb370;
+  color: #4b4b4b;
   border: 0.1em solid;
   font-size: 1em;
   font-weight: 700;
   padding: 0.1em 0.4em;
   border-radius: 0.4em;
   margin-right: 0.5em;
-}/*# sourceMappingURL=theme_A.css.map */
+}/*# sourceMappingURL=theme_B.css.map */

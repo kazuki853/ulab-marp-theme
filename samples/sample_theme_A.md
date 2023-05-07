@@ -1153,13 +1153,17 @@ $M=4$とし、入力ベクトルは$(1, x, x^2, x^3)^\top$のように３次多�
 <div class="split">
 <div class="split_l h_center">
 
-![height:200](images/fig31.svg) 
-図3.1 学習前のモデルからの３次関数のサンプル
+<img src="images/fig31.svg" width="350px">
+
+**図3.1** 学習前のモデルの3次関数のサンプル
+
 </div>
 <div class="split_r h_center">
 
-![height:200](images/fig32.svg)
-図3.2 サンプルの関数から得た人工データ
+<img src="images/fig31.svg" width="350px">
+
+**図3.2** サンプルの関数から得た人工データ
+
 </div>
 </div>
 
@@ -1407,11 +1411,11 @@ $$
 # 3.5.3 モデルの比較
 
 <div class="split">
-<div class="split_l h_center v_center" style="width:602px;">
+<div class="split_l h_center v_center" style="flex-basis: 85%;">
 
-<img src="images/fig33.svg" width="550px">
+<img src="images/fig33.svg" width="500px">
 
-図 3.3 多項式回帰モデルの予測分布
+**図 3.3** 多項式回帰モデルの予測分布
 
 </div>
 <div class="split_r card bg_gray" style="width:482px; height: 100%">
@@ -1445,11 +1449,11 @@ $$
 
 ---
 <div class="split">
-<div class="split_l h_center v_center" style="width:532px;">
+<div class="split_l h_center v_center" style="flex-basis: 85%;">
 
-<img src="images/fig34.svg" width="550px">
+<img src="images/fig34.svg" width="500px">
 
-図 3.4 多項式回帰モデルのモデルエビデンス
+**図 3.4** 多項式回帰モデルのモデルエビデンス
 
 </div>
 <div class="split_r card bg_gray" style="width:532px; height: 100%">
@@ -1483,17 +1487,17 @@ $$
 <div class="h_center">
 <img src="images/fig35.svg" width="650px">
 
-図3.5 １次関数、２次関数、最近傍法による予測
+**図3.5** １次関数、２次関数、最近傍法による予測
 </div>
 
 ---
 <div class="split">
-<div class="split_l h_center v_center" style="width:532px;">
-<img src="images/fig36.svg" width="650px">
+<div class="split_l h_center v_center" style="flex-basis: 85%;">
+<img src="images/fig36.svg" width="500px">
 
 図3.6 訓練データの数と予測誤差の関係
 </div>
-<div class="split_r card bg_gray" style="width:532px;">
+<div class="split_r card bg_gray">
 
 ３種類のモデルで、学習データ数を増やしていったときのテストデータに対する予測誤差を評価すると、次のようになる。
 

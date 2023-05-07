@@ -534,4 +534,16 @@ p>svg>foreignObject {
 //     box-shadow: 3px 3px 0 darken($main-highlight-color, 10%);
 // }
 
+.list_bib>ol {
+    counter-reset: list;
+    &>li {
+        list-style: none;
+        counter-increment: list;
+        &::marker{
+            content: "[" counter(list, decimal) "]\a0";
+            font-weight: normal;
+        }
+    }
+}
+
 
