@@ -113,6 +113,8 @@ section {
             color: $main-text-color;
             text-align: center;
 
+            border-bottom: 0.1em solid $main-highlight-color;
+
             &::after {
                 display: none;
             }
