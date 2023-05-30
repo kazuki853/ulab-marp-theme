@@ -404,7 +404,7 @@ section.section_title > *:not(h1, footer) {
 section.cover {
   position: relative;
   background-color: #fff;
-  background-image: url(./images/ulab_blue.svg), repeating-linear-gradient(150deg, transparent, transparent 19px, #f2f2f2 20px, #f2f2f2 39px, transparent 40px);
+  background-image: url(./images/ulab_blue.svg);
   background-repeat: no-repeat, no-repeat;
   background-size: 30%, auto;
   background-position: 90% 85%, center;

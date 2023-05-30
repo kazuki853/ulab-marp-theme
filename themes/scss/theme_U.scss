@@ -135,8 +135,7 @@ section {
     &.cover {
         position: relative;
         background-color: #fff;
-        background-image: url(./images/ulab_blue.svg),
-            repeating-linear-gradient(150deg, transparent, transparent 19px, lighten(#000, 95%) 20px, lighten(#000, 95%) 39px, transparent 40px);
+        background-image: url(./images/ulab_blue.svg);
         background-repeat: no-repeat, no-repeat;
         background-size: 30%, auto;
         background-position: 90% 85%, center;
